@@ -143,10 +143,10 @@ class _ComplainAddDetailState extends State<ComplainAddDetail> {
                   isDefaultAction: true,
                   child: new Text(
                     "ตกลง",
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 13,
                       fontFamily: 'Sarabun',
-                      color: Color(0xFF005C9E),
+                      color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -233,11 +233,11 @@ class _ComplainAddDetailState extends State<ComplainAddDetail> {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'เพิ่มเรื่องร้องเรียน\nหัวข้อ ${widget.label}',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontFamily: 'Kanit',
                         fontWeight: FontWeight.w600,
                         fontSize: 36,
-                        color: titleColor,
+                        color: Theme.of(context).primaryColorLight,
                       ),
                     ),
                   ),
@@ -373,13 +373,13 @@ class _ComplainAddDetailState extends State<ComplainAddDetail> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: borderColor),
+                      border: Border.all(color: Theme.of(context).primaryColor),
                     ),
                     alignment: Alignment.center,
                     child: Text(
                       'ยกเลิก',
                       style: TextStyle(
-                        color: titleColor,
+                        color: Theme.of(context).primaryColor,
                         fontSize: 16,
                         fontFamily: 'Kanit',
                       ),
@@ -410,7 +410,7 @@ class _ComplainAddDetailState extends State<ComplainAddDetail> {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      color: titleColor,
+                      color: Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     alignment: Alignment.center,
@@ -460,6 +460,10 @@ class _ComplainAddDetailState extends State<ComplainAddDetail> {
   }) {
     return TextFormField(
       textAlignVertical: TextAlignVertical.top,
+      style: TextStyle(
+        color: Theme.of(context).primaryColor,
+        fontFamily: 'Kanit',
+      ),
       controller: controller,
       expands: isMultiline,
       maxLines: isMultiline ? null : 1,
@@ -477,7 +481,7 @@ class _ComplainAddDetailState extends State<ComplainAddDetail> {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(color: titleColor),
+          borderSide: BorderSide(color: Theme.of(context).primaryColorLight,),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),

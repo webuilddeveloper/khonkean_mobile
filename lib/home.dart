@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_launcher_icons/xml_templates.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -151,11 +152,10 @@ class HomePageState extends State<HomePage> {
             _buildRotation(),
             const SizedBox(height: 20),
             _buildService(),
-            const SizedBox(height: 20),
+            // const SizedBox(height: 20),
             _buildNews(),
             const SizedBox(height: 20),
             _buildTravel(context),
-            const SizedBox(height: 20),
             _buildEmergencySection(),
             const SizedBox(height: 50),
           ],
@@ -200,20 +200,19 @@ class HomePageState extends State<HomePage> {
                 child: Container(
                   height: 75,
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(
+                    gradient: LinearGradient(
+                      colors: [
+                        Theme.of(context).primaryColor,
+                        Theme.of(context).primaryColorLight,
+                      ],
+                      // stops: [0.0, 0.5, 1.0],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
-                      colors: [
-                        Color(0xFFf59e0b),
-                        Color(0xFFfbbf24),
-                        Color(0xFFfcd34d),
-                      ],
-                      stops: [0.0, 0.5, 1.0],
                     ),
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFFf59e0b).withOpacity(0.3),
+                        color: Theme.of(context).primaryColor.withOpacity(0.3),
                         blurRadius: 12,
                         offset: const Offset(0, 6),
                         spreadRadius: 2,
@@ -274,8 +273,14 @@ class HomePageState extends State<HomePage> {
                   gradient: LinearGradient(
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
-                      colors: [Color(0xFF9e6e19), Color(0xFFe7b014)],
-                      stops: [0.0, 0.8]),
+                      colors: [
+                        Theme.of(context).primaryColor,
+                        Theme.of(context).primaryColorLight,
+                      ],
+                      stops: [
+                        0.0,
+                        0.8
+                      ]),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Row(
@@ -317,8 +322,14 @@ class HomePageState extends State<HomePage> {
                   gradient: LinearGradient(
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
-                      colors: [Color(0xFF9e6e19), Color(0xFFe7b014)],
-                      stops: [0.0, 0.8]),
+                      colors: [
+                        Theme.of(context).primaryColor,
+                        Theme.of(context).primaryColorLight,
+                      ],
+                      stops: [
+                        0.0,
+                        0.8
+                      ]),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Row(
@@ -406,16 +417,16 @@ class HomePageState extends State<HomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 'ข่าวประกาศ',
                 style: TextStyle(
-                  color: Color(0xFFbf9000),
+                  color: Theme.of(context).primaryColor,
                   fontSize: 20.0,
                   fontFamily: 'Kanit',
                   fontWeight: FontWeight.w400,
                 ),
               ),
-              InkWell(
+              GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
@@ -474,7 +485,7 @@ class HomePageState extends State<HomePage> {
                     itemCount: newsList.length,
                     itemBuilder: (context, index) {
                       final newsItem = newsList[index];
-                      return InkWell(
+                      return GestureDetector(
                         onTap: () {
                           Navigator.push(
                             context,
@@ -490,7 +501,7 @@ class HomePageState extends State<HomePage> {
                           );
                         },
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8),
+                          padding: const EdgeInsets.symmetric(vertical: 12),
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.55,
                             margin: const EdgeInsets.only(right: 15),
@@ -500,8 +511,8 @@ class HomePageState extends State<HomePage> {
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey.withOpacity(0.15),
-                                  blurRadius: 4,
-                                  offset: Offset(4, 0),
+                                  blurRadius: 12,
+                                  offset: Offset(4, 4),
                                 ),
                               ],
                             ),
@@ -537,7 +548,8 @@ class HomePageState extends State<HomePage> {
                                                           .expectedTotalBytes!
                                                   : null,
                                               strokeWidth: 2,
-                                              color: const Color(0xFFbf9000),
+                                              color: Theme.of(context)
+                                                  .primaryColor,
                                             ),
                                           ),
                                         );
@@ -596,7 +608,7 @@ class HomePageState extends State<HomePage> {
                 }
               },
             ),
-          )
+          ),
         ],
       ),
     );
@@ -668,10 +680,10 @@ class HomePageState extends State<HomePage> {
       children: [
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
-          child: const Text(
+          child: Text(
             'บริการสมาชิก',
             style: TextStyle(
-              color: Color(0xFFbf9000),
+              color: Theme.of(context).primaryColor,
               fontSize: 20.0,
               fontFamily: 'Kanit',
               fontWeight: FontWeight.w400,
@@ -722,12 +734,12 @@ class HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
+                    colors: [
+                      Theme.of(context).primaryColor,
+                      Theme.of(context).primaryColorLight,
+                    ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
-                    colors: [
-                      Color(0xFFbf9000),
-                      Color(0xFFffd700),
-                    ],
                   ),
                   borderRadius: BorderRadius.circular(15),
                   boxShadow: [
@@ -757,11 +769,11 @@ class HomePageState extends State<HomePage> {
             child: Text(
               title,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 14.0,
                 fontFamily: 'Kanit',
                 fontWeight: FontWeight.w400,
-                color: Color(0xFFbf9000),
+                color: Theme.of(context).primaryColor,
               ),
             ),
           ),
@@ -778,13 +790,13 @@ class HomePageState extends State<HomePage> {
         children: [
           Container(
             padding: const EdgeInsets.symmetric(vertical: 8),
-            child: const Text(
+            child: Text(
               'เบอร์ฉุกเฉิน',
               style: TextStyle(
                 fontSize: 18,
                 fontFamily: 'Kanit',
                 fontWeight: FontWeight.w500,
-                color: Color(0xFFbf9000),
+                color: Theme.of(context).primaryColor,
               ),
             ),
           ),
@@ -1087,16 +1099,16 @@ class HomePageState extends State<HomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 'ท่องเที่ยวยอดนิยม',
                 style: TextStyle(
-                  color: Color(0xFFbf9000),
+                  color: Theme.of(context).primaryColor,
                   fontSize: 20.0,
                   fontFamily: 'Kanit',
                   fontWeight: FontWeight.w400,
                 ),
               ),
-              InkWell(
+              GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
@@ -1140,7 +1152,7 @@ class HomePageState extends State<HomePage> {
                 itemCount: nakhonPhanomTravelPlaces.length,
                 itemBuilder: (context, index) {
                   final place = nakhonPhanomTravelPlaces[index];
-                  return InkWell(
+                  return GestureDetector(
                     onTap: () async {
                       try {
                         final uri = Uri.parse(place['url']!);
@@ -1162,11 +1174,11 @@ class HomePageState extends State<HomePage> {
                         );
                       }
                     },
-                    borderRadius: BorderRadius.circular(12),
+                    // borderRadius: BorderRadius.circular(12),
                     child: Container(
                       height: MediaQuery.of(context).size.height * 0.22,
                       width: MediaQuery.of(context).size.width * 0.55,
-                      margin: const EdgeInsets.only(right: 15),
+                      margin: const EdgeInsets.only(right: 15, bottom: 15),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
@@ -1174,8 +1186,8 @@ class HomePageState extends State<HomePage> {
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.15),
                             spreadRadius: 1,
-                            blurRadius: 5,
-                            offset: const Offset(2, 2),
+                            blurRadius: 12,
+                            offset: Offset(4, 4),
                           ),
                         ],
                       ),
@@ -1209,7 +1221,7 @@ class HomePageState extends State<HomePage> {
                                                     .expectedTotalBytes!
                                             : null,
                                         strokeWidth: 2,
-                                        color: const Color(0xFFbf9000),
+                                        color: Theme.of(context).primaryColor,
                                       ),
                                     ),
                                   );
@@ -1252,11 +1264,11 @@ class HomePageState extends State<HomePage> {
                                 children: [
                                   Text(
                                     place['name']!,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontSize: 14,
                                       fontFamily: 'Kanit',
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xFFbf9000),
+                                      color: Theme.of(context).primaryColor,
                                     ),
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,

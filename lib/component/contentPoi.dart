@@ -128,6 +128,7 @@ class _ContentPoi extends State<ContentPoi> {
     return ListView(
       shrinkWrap: true, // 1st add
       physics: ClampingScrollPhysics(), // 2nd
+      padding: EdgeInsets.zero,
       children: [
         Container(
           // width: 500.0,
@@ -210,7 +211,7 @@ class _ContentPoi extends State<ContentPoi> {
               ),
             ),
             Container(
-              width: 74.0,
+              // width: 74.0,
               height: 31.0,
               // decoration: BoxDecoration(
               //     image: DecorationImage(
@@ -232,7 +233,11 @@ class _ContentPoi extends State<ContentPoi> {
                         box!.localToGlobal(Offset.zero) & box.size,
                   );
                 },
-                child: Image.asset('assets/images/share.png'),
+                child: Image.asset(
+                  'assets/images/share.png',
+                  // height: 200,
+                  // width: 300,
+                ),
               ),
             )
           ],

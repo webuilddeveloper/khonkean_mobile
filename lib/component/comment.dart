@@ -165,10 +165,11 @@ class _Comment extends State<Comment> {
             //   ),
             // ),
             style: ElevatedButton.styleFrom(
+              backgroundColor: Theme.of(context).primaryColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
-                overlayColor: Theme.of(context).primaryColorDark
+                overlayColor: Theme.of(context).primaryColor
             ),
             // splashColor: Colors.transparent,
             // highlightColor: Colors.transparent,

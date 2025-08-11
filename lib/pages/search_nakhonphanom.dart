@@ -149,7 +149,7 @@ class _SearchNakhonPhanomPageState extends State<SearchNakhonPhanomPage>
       backgroundColor: Color(0xFFF8FAFC),
       appBar: AppBar(
         title: Text(
-          'ค้นหานครพนม',
+          'ค้นหาขอนแก่น',
           style: TextStyle(
             fontFamily: 'Kanit',
             fontWeight: FontWeight.w700,
@@ -167,9 +167,8 @@ class _SearchNakhonPhanomPageState extends State<SearchNakhonPhanomPage>
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Color(0xFFe7b014),
-                Color(0xFFf4c430),
-                Color(0xFFe7b014),
+                Theme.of(context).primaryColor,
+                Theme.of(context).primaryColorLight,
               ],
             ),
           ),
@@ -224,7 +223,7 @@ class _SearchNakhonPhanomPageState extends State<SearchNakhonPhanomPage>
                       padding: EdgeInsets.all(12),
                       child: Icon(
                         Icons.search_rounded,
-                        color: Color(0xFFe7b014),
+                        color: Theme.of(context).primaryColor,
                         size: 24,
                       ),
                     ),
@@ -257,7 +256,7 @@ class _SearchNakhonPhanomPageState extends State<SearchNakhonPhanomPage>
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                       borderSide: BorderSide(
-                        color: Color(0xFFe7b014).withOpacity(0.3),
+                        color: Theme.of(context).primaryColor.withOpacity(0.3),
                         width: 2,
                       ),
                     ),
@@ -469,7 +468,7 @@ class _SearchNakhonPhanomPageState extends State<SearchNakhonPhanomPage>
                         child: ElevatedButton(
                           onPressed: () => Navigator.pop(context),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFFe7b014),
+                            backgroundColor: Theme.of(context).primaryColor,
                             foregroundColor: Colors.white,
                             padding: EdgeInsets.symmetric(vertical: 12),
                             shape: RoundedRectangleBorder(
@@ -627,14 +626,15 @@ class _SearchNakhonPhanomPageState extends State<SearchNakhonPhanomPage>
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          Color(0xFFe7b014),
-                          Color(0xFFf4c430),
+                          Theme.of(context).primaryColor,
+                          Theme.of(context).primaryColorLight,
                         ],
                       ),
                       borderRadius: BorderRadius.circular(8),
                       boxShadow: [
                         BoxShadow(
-                          color: Color(0xFFe7b014).withOpacity(0.3),
+                          color:
+                              Theme.of(context).primaryColor.withOpacity(0.3),
                           blurRadius: 8,
                           offset: Offset(0, 3),
                         ),

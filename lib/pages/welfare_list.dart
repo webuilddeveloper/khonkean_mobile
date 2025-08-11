@@ -138,7 +138,7 @@ class _WelfareListPageState extends State<WelfareListPage>
             letterSpacing: 0.5,
           ),
         ),
-        backgroundColor: Color(0xFFe7b014),
+        backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.white),
         flexibleSpace: Container(
@@ -147,9 +147,8 @@ class _WelfareListPageState extends State<WelfareListPage>
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Color(0xFFe7b014),
-                Color(0xFFf4c430),
-                Color(0xFFe7b014),
+                Theme.of(context).primaryColor,
+                Theme.of(context).primaryColorLight,
               ],
             ),
           ),
@@ -176,7 +175,7 @@ class _WelfareListPageState extends State<WelfareListPage>
                 Row(
                   children: [
                     Icon(Icons.health_and_safety_outlined,
-                        color: Color(0xFFe7b014), size: 20),
+                        color: Theme.of(context).primaryColor, size: 20),
                     SizedBox(width: 8),
                     Text(
                       '${welfareList.length} รายการ',
@@ -310,10 +309,10 @@ class _WelfareListPageState extends State<WelfareListPage>
                         padding:
                             EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         decoration: BoxDecoration(
-                          color: Color(0xFFe7b014).withOpacity(0.1),
+                          color: Theme.of(context).primaryColor.withOpacity(0.1),
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
-                            color: Color(0xFFe7b014).withOpacity(0.3),
+                            color: Theme.of(context).primaryColor.withOpacity(0.3),
                           ),
                         ),
                         child: Text(
@@ -321,7 +320,7 @@ class _WelfareListPageState extends State<WelfareListPage>
                           style: TextStyle(
                             fontFamily: 'Kanit',
                             fontSize: 14,
-                            color: Color(0xFFe7b014),
+                            color: Theme.of(context).primaryColor,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -343,7 +342,7 @@ class _WelfareListPageState extends State<WelfareListPage>
                         child: ElevatedButton(
                           onPressed: () => Navigator.pop(context),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFFe7b014),
+                            backgroundColor: Theme.of(context).primaryColor,
                             foregroundColor: Colors.white,
                             padding: EdgeInsets.symmetric(vertical: 12),
                             shape: RoundedRectangleBorder(
@@ -507,7 +506,7 @@ class _WelfareListPageState extends State<WelfareListPage>
                                       fontFamily: 'Kanit',
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xFFe7b014),
+                                      color: Theme.of(context).primaryColor,
                                       letterSpacing: 0.3,
                                     ),
                                   ),
@@ -518,14 +517,14 @@ class _WelfareListPageState extends State<WelfareListPage>
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
                                   colors: [
-                                    Color(0xFFe7b014),
-                                    Color(0xFFf4c430),
+                                    Theme.of(context).primaryColor,
+                                    Theme.of(context).primaryColorLight,
                                   ],
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Color(0xFFe7b014).withOpacity(0.3),
+                                    color: Theme.of(context).primaryColor.withOpacity(0.3),
                                     blurRadius: 10,
                                     offset: Offset(0, 4),
                                   ),

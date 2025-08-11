@@ -13,7 +13,7 @@ labelTextFormFieldPasswordOldNew(String lable, bool showSubtitle) {
                 lable,
                 style: const TextStyle(
                   fontSize: 15.000,
-                  fontFamily: 'Sarabun',
+                  fontFamily: 'Kanit',
                   color: Color(0xFFCB0000),
                 ),
               ),
@@ -22,7 +22,7 @@ labelTextFormFieldPasswordOldNew(String lable, bool showSubtitle) {
                   '(รหัสผ่านต้องเป็นตัวอักษร a-z, A-Z และ 0-9 ความยาวขั้นต่ำ 6 ตัวอักษร)',
                   style: TextStyle(
                     fontSize: 10.00,
-                    fontFamily: 'Sarabun',
+                    fontFamily: 'Kanit',
                     color: Color(0xFFFF0000),
                   ),
                 ),
@@ -144,14 +144,14 @@ textFormField(
   return TextField(
     obscureText: isPassword!,
     style: TextStyle(
-      color: enabled! ? Color(0XFFfad84c) : const Color(0xFFFFFFFF),
+      color: enabled! ? Color(0XFF9e3227) : Colors.grey.shade600,
       fontWeight: FontWeight.normal,
       fontFamily: 'Kanit',
       fontSize: 15.00,
     ),
     decoration: InputDecoration(
       filled: true,
-      fillColor: enabled ? const Color(0xFFfffadd) : const Color(0xFFbfbfbf),
+      fillColor: enabled ? const Color(0XFF9e3227).withOpacity(0.1) : Colors.grey.shade400,
       contentPadding: const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
       hintText: hintText,
       // focusedBorder: UnderlineInputBorder(
@@ -205,14 +205,14 @@ textFormFieldNoValidator(
 ) {
   return TextFormField(
     style: TextStyle(
-      color: enabled ? const Color(0xFF000000) : const Color(0xFFFFFFFF),
+      color: enabled! ? Color(0XFF9e3227) : Colors.grey.shade600,
       fontWeight: FontWeight.normal,
       fontFamily: 'Kanit',
       fontSize: 15.00,
     ),
     decoration: InputDecoration(
       filled: true,
-      fillColor: enabled ? const Color(0xFFfffadd) : const Color(0xFFbfbfbf),
+      fillColor: enabled ? const Color(0XFF9e3227).withOpacity(0.1) : Colors.grey.shade400,
       contentPadding: const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
       hintText: hintText,
       border: OutlineInputBorder(
@@ -251,14 +251,14 @@ textFormPhoneField(
   return TextFormField(
     keyboardType: TextInputType.number,
     style: TextStyle(
-      color: enabled ? Color(0XFFfad84c) : const Color(0xFFFFFFFF),
+      color: enabled! ? Color(0XFF9e3227) : Colors.grey.shade600,
       fontWeight: FontWeight.normal,
-      fontFamily: 'Sarabun',
+      fontFamily: 'Kanit',
       fontSize: 15.00,
     ),
     decoration: InputDecoration(
       filled: true,
-      fillColor: enabled ? const Color(0xFFfffadd) : const Color(0xFF707070),
+      fillColor: enabled ? const Color(0XFF9e3227).withOpacity(0.1) : Colors.grey.shade400,
       contentPadding: const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
       hintText: hintText,
       border: OutlineInputBorder(
@@ -267,7 +267,7 @@ textFormPhoneField(
       ),
       errorStyle: const TextStyle(
         fontWeight: FontWeight.normal,
-        fontFamily: 'Sarabun',
+        fontFamily: 'Kanit',
         fontSize: 10.0,
       ),
     ),
@@ -297,14 +297,14 @@ textFormIdCardField(
   return TextFormField(
     keyboardType: TextInputType.number,
     style: TextStyle(
-      color: enabled! ? const Color(0xFF000070) : const Color(0xFFFFFFFF),
+      color: enabled! ? Color(0XFF9e3227) : Colors.grey.shade600,
       fontWeight: FontWeight.normal,
-      fontFamily: 'Sarabun',
+      fontFamily: 'Kanit',
       fontSize: 15.00,
     ),
     decoration: InputDecoration(
       filled: true,
-      fillColor: enabled ? const Color(0xFFfffadd) : const Color(0xFF707070),
+      fillColor: enabled ? const Color(0XFF9e3227).withOpacity(0.1) : Colors.grey.shade400,
       contentPadding: const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
       hintText: hintText,
       border: OutlineInputBorder(
@@ -313,7 +313,7 @@ textFormIdCardField(
       ),
       errorStyle: const TextStyle(
         fontWeight: FontWeight.normal,
-        fontFamily: 'Sarabun',
+        fontFamily: 'Kanit',
         fontSize: 10.0,
       ),
     ),

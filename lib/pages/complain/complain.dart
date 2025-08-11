@@ -46,7 +46,7 @@ class _ComplainListCategoryState extends State<ComplainListCategory> {
 
               Column(
                 mainAxisSize: MainAxisSize.min,
-                children: const [
+                children: [
                   Text(
                     'Smart',
                     textAlign: TextAlign.center,
@@ -55,18 +55,18 @@ class _ComplainListCategoryState extends State<ComplainListCategory> {
                       fontWeight: FontWeight.w600,
                       fontSize: 42,
                       height: 1.0, // ลดระยะห่างบรรทัด
-                      color: Color(0xFFe7b014),
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                   Text(
-                    'นครพนม',
+                    'ขอนแก่น',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Charmonman',
                       fontWeight: FontWeight.w600,
                       fontSize: 62,
                       height: 1.0,
-                      color: Color(0xFFe7b014),
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ],
@@ -77,14 +77,14 @@ class _ComplainListCategoryState extends State<ComplainListCategory> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       'รับเรื่องร้องเรียน',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Kanit',
                         fontWeight: FontWeight.w600,
                         fontSize: 36,
-                        color: Color(0xFFe7b014),
+                        color: Theme.of(context).primaryColor,
                       ),
                     ),
                     SizedBox(height: screenHeight * 0.02),
@@ -144,15 +144,18 @@ class _ComplainListCategoryState extends State<ComplainListCategory> {
         height: screenHeight * 0.12, // ปรับความสูงตามหน้าจอ
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          gradient: const LinearGradient(
+          gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
-            colors: [Color(0xFFe7b014), Color(0xFFfbd749)],
+            colors: [
+              Theme.of(context).primaryColor,
+              Theme.of(context).primaryColorLight,
+            ],
             stops: [0.0, 0.9],
           ),
           boxShadow: [
             BoxShadow(
-              color: Color(0xFFe7b014).withOpacity(0.3),
+              color: Theme.of(context).primaryColor.withOpacity(0.3),
               blurRadius: 8,
               offset: Offset(0, 4),
             ),

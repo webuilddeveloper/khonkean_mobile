@@ -90,28 +90,34 @@ class _PoiForm extends State<PoiForm> {
           ),
           controller: _refreshController,
           onLoading: _onLoading,
-          child: ListView(
-            shrinkWrap: true,
+          child: Stack(
             children: [
-              Stack(
+              ListView(
+                // shrinkWrap: true,
+                padding: EdgeInsets.zero,
                 children: [
+                  // Stack(
+                  //   children: [
+                      
+                  //   ],
+                  // ),
                   ContentPoi(
-                    pathShare: 'content/poi/',
-                    code: widget.code,
-                    url: '${poiApi}read',
-                    model: widget.model,
-                    urlGallery: widget.urlGallery,
-                  ),
-                  Positioned(
-                    right: 0,
-                    top: statusBarHeight + 5,
-                    child: Container(
-                      child: buttonCloseBack(context),
-                    ),
-                  ),
+                        pathShare: 'content/poi/',
+                        code: widget.code,
+                        url: '${poiApi}read',
+                        model: widget.model,
+                        urlGallery: widget.urlGallery,
+                      ),
+                  widget.urlComment != '' ? comment! : Container(),
                 ],
               ),
-              widget.urlComment != '' ? comment! : Container(),
+              Positioned(
+                right: 0,
+                top: statusBarHeight + 5,
+                child: Container(
+                  child: buttonCloseBack(context),
+                ),
+              ),
             ],
           ),
         ),

@@ -31,24 +31,27 @@ class _CategorySelectorState extends State<CategorySelector> {
 
         if (snapshot.hasData) {
           return Container(
-            height: 45.0,
-            padding: EdgeInsets.only(left: 3.0, right: 3.0),
+            height: 40.0,
+            padding: EdgeInsets.symmetric(horizontal: 3, vertical: 3),
             margin: EdgeInsets.symmetric(horizontal: 10.0),
             decoration: new BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 0,
-                  blurRadius: 7,
-                  offset: Offset(0, 3), // changes position of shadow
-                ),
-              ],
+              // boxShadow: [
+              //   BoxShadow(
+              //     color: Colors.grey.withOpacity(0.5),
+              //     spreadRadius: 0,
+              //     blurRadius: 7,
+              //     offset: Offset(0, 3), // changes position of shadow
+              //   ),
+              // ],
               borderRadius: new BorderRadius.circular(6.0),
               color: Colors.white,
             ),
-            child: ListView.builder(
+            child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: snapshot.data.length,
+              separatorBuilder: (BuildContext context, int index) {
+                return SizedBox(width: 10);
+              },
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
                   onTap: () {
@@ -59,29 +62,33 @@ class _CategorySelectorState extends State<CategorySelector> {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      border: index == selectedIndex
-                          ? Border(
-                              bottom: BorderSide(
-                                  width: 2,
-                                  color: Theme.of(context).primaryColor))
-                          : null,
-                    ),
+                        color: index == selectedIndex
+                            ? Theme.of(context).primaryColor
+                            : Colors.white,
+                        borderRadius: BorderRadius.circular(10)
+                        // border: index == selectedIndex
+                        //     ? Border(
+                        //         bottom: BorderSide(
+                        //             width: 2,
+                        //             color: Theme.of(context).primaryColor))
+                        //     : null,
+                        ),
                     padding: EdgeInsets.symmetric(
-                      horizontal: 5.0,
-                      vertical: 10.0,
+                      horizontal: 10.0,
+                      vertical: 5.0,
                     ),
                     child: Text(
                       snapshot.data[index]['title'],
                       style: TextStyle(
                         color: index == selectedIndex
-                            ? Theme.of(context).primaryColor
-                            : Colors.grey,
+                            ? Colors.white
+                            : Theme.of(context).primaryColor,
                         // decoration: index == selectedIndex
                         //     ? TextDecoration.underline
                         //     : null,
                         fontSize: index == selectedIndex ? 15.0 : 13.0,
                         fontWeight: FontWeight.normal,
-                        letterSpacing: 1.2,
+                        // letterSpacing: 1.2,
                         fontFamily: 'Sarabun',
                       ),
                     ),

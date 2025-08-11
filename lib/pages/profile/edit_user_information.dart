@@ -763,10 +763,10 @@ class _EditUserInformationPageState extends State<EditUserInformationPage> {
               true,
               false,
             ),
-            labelTextFormField('* อีเมล์'),
+            labelTextFormField('* อีเมล'),
             textFormFieldNoValidator(
               txtEmail,
-              'อีเมล์',
+              'อีเมล',
               false,
               false,
             ),
@@ -985,7 +985,7 @@ class _EditUserInformationPageState extends State<EditUserInformationPage> {
                 margin: EdgeInsets.symmetric(vertical: 100.0),
                 child: Material(
                   elevation: 2.0,
-                  borderRadius: BorderRadius.circular(5.0),
+                  borderRadius: BorderRadius.circular(12.0),
                   color: Theme.of(context).primaryColor,
                   child: MaterialButton(
                     height: 40,
@@ -999,10 +999,10 @@ class _EditUserInformationPageState extends State<EditUserInformationPage> {
                     child: new Text(
                       'บันทึกข้อมูล',
                       style: new TextStyle(
-                        fontSize: 13.0,
+                        fontSize: 18.0,
                         color: Colors.white,
-                        fontWeight: FontWeight.normal,
-                        fontFamily: 'Sarabun',
+                        // fontWeight: FontWeight.normal,
+                        fontFamily: 'Kanit',
                       ),
                     ),
                   ),
@@ -1110,7 +1110,7 @@ class _EditUserInformationPageState extends State<EditUserInformationPage> {
                       'อัลบั้มรูปภาพ',
                       style: TextStyle(
                         fontSize: 13,
-                        fontFamily: 'Sarabun',
+                        fontFamily: 'Kanit',
                         fontWeight: FontWeight.normal,
                       ),
                     ),
@@ -1124,7 +1124,7 @@ class _EditUserInformationPageState extends State<EditUserInformationPage> {
                     'กล้องถ่ายรูป',
                     style: TextStyle(
                       fontSize: 13,
-                      fontFamily: 'Sarabun',
+                      fontFamily: 'Kanit',
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -1149,7 +1149,7 @@ class _EditUserInformationPageState extends State<EditUserInformationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: header(context, goBack, title: 'แก้ไขข้อมูล'),
-      backgroundColor: Color(0xFFF5F8FB),
+      backgroundColor: Colors.white,
       body: FutureBuilder<dynamic>(
         future: futureModel,
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {

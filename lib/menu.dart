@@ -322,8 +322,8 @@ class _MenuState extends State<Menu> {
     IconData? iconDataActive,
   }) {
     Color color = _currentPage == index
-        ? const Color(0xFFfad84c)
-        : const Color(0XFFd9d9d9);
+        ? Theme.of(context).primaryColor
+        : Theme.of(context).primaryColor.withOpacity(0.3);
 
     return GestureDetector(
       onTap: () {

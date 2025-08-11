@@ -104,7 +104,7 @@ class _OtopProductDetailPageState extends State<OtopProductDetailPage>
             fontSize: 18,
           ),
         ),
-        backgroundColor: Color(0xFFe7b014),
+        backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
         flexibleSpace: Container(
           decoration: BoxDecoration(
@@ -112,9 +112,8 @@ class _OtopProductDetailPageState extends State<OtopProductDetailPage>
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Color(0xFFe7b014),
-                Color(0xFFf4c430),
-                Color(0xFFe7b014),
+                Theme.of(context).primaryColor,
+                Theme.of(context).primaryColorLight,
               ],
             ),
           ),
@@ -167,7 +166,7 @@ class _OtopProductDetailPageState extends State<OtopProductDetailPage>
                           child: Center(
                             child: CircularProgressIndicator(
                               valueColor: AlwaysStoppedAnimation<Color>(
-                                Color(0xFFe7b014),
+                                Theme.of(context).primaryColor,
                               ),
                             ),
                           ),
@@ -211,13 +210,13 @@ class _OtopProductDetailPageState extends State<OtopProductDetailPage>
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
-                              Color(0xFFe7b014).withOpacity(0.2),
-                              Color(0xFFf4c430).withOpacity(0.2),
+                              Theme.of(context).primaryColor.withOpacity(0.2),
+                              Theme.of(context).primaryColorLight.withOpacity(0.2),
                             ],
                           ),
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
-                            color: Color(0xFFe7b014).withOpacity(0.3),
+                            color: Theme.of(context).primaryColor.withOpacity(0.3),
                           ),
                         ),
                         child: Text(
@@ -225,7 +224,7 @@ class _OtopProductDetailPageState extends State<OtopProductDetailPage>
                           style: TextStyle(
                             fontFamily: 'Kanit',
                             fontSize: 10,
-                            color: Color(0xFFe7b014),
+                            color: Theme.of(context).primaryColor,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -273,7 +272,7 @@ class _OtopProductDetailPageState extends State<OtopProductDetailPage>
                                   return Icon(
                                     Icons.star_rounded,
                                     color: index < 4
-                                        ? Color(0xFFffa726)
+                                        ? Theme.of(context).primaryColor
                                         : Colors.grey[300],
                                     size: 20,
                                   );
@@ -297,7 +296,7 @@ class _OtopProductDetailPageState extends State<OtopProductDetailPage>
                                 fontFamily: 'Kanit',
                                 fontSize: 26,
                                 fontWeight: FontWeight.w800,
-                                color: Color(0xFFe7b014),
+                                color: Theme.of(context).primaryColor,
                               ),
                             ),
                           ],
@@ -339,7 +338,7 @@ class _OtopProductDetailPageState extends State<OtopProductDetailPage>
                       children: [
                         Icon(
                           Icons.chat_bubble_outline_rounded,
-                          color: Color(0xFFe7b014),
+                          color: Theme.of(context).primaryColor,
                           size: 20,
                         ),
                         SizedBox(width: 10),
@@ -380,7 +379,7 @@ class _OtopProductDetailPageState extends State<OtopProductDetailPage>
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16),
                             side: BorderSide(
-                              color: Color(0xFFe7b014),
+                              color: Theme.of(context).primaryColor,
                               width: 2,
                             ),
                           ),
@@ -391,7 +390,7 @@ class _OtopProductDetailPageState extends State<OtopProductDetailPage>
                             fontFamily: 'Kanit',
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
-                            color: Color(0xFFe7b014),
+                            color: Theme.of(context).primaryColor,
                           ),
                         ),
                       ),
@@ -403,12 +402,12 @@ class _OtopProductDetailPageState extends State<OtopProductDetailPage>
                       height: 50,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [Color(0xFFe7b014), Color(0xFFf4c430)],
+                          colors: [Theme.of(context).primaryColor, Theme.of(context).primaryColorLight],
                         ),
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
-                            color: Color(0xFFe7b014).withOpacity(0.3),
+                            color: Theme.of(context).primaryColor.withOpacity(0.3),
                             blurRadius: 15,
                             offset: Offset(0, 6),
                           ),
@@ -470,7 +469,7 @@ class _OtopProductDetailPageState extends State<OtopProductDetailPage>
                 height: 40,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Color(0xFFe7b014), Color(0xFFf4c430)],
+                    colors: [Theme.of(context).primaryColor, Theme.of(context).primaryColorLight],
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -508,7 +507,7 @@ class _OtopProductDetailPageState extends State<OtopProductDetailPage>
                               Icons.star_rounded,
                               size: 12,
                               color: index < double.parse(comment['rating']!)
-                                  ? Color(0xFFffa726)
+                                  ? Theme.of(context).primaryColor
                                   : Colors.grey[300],
                             );
                           }),

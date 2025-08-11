@@ -543,8 +543,8 @@ class _PoiList extends State<PoiList> {
 
   Container card(BuildContext context, dynamic model) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-      child: InkWell(
+      padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+      child: GestureDetector(
         onTap: () {
           Navigator.push(
             context,
@@ -558,7 +558,8 @@ class _PoiList extends State<PoiList> {
         },
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(12),
+            color: Colors.white,
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.4),
@@ -567,40 +568,33 @@ class _PoiList extends State<PoiList> {
                 offset: Offset(0, 3),
               ),
             ],
+            // border: Border.all(
+            //   color: Theme.of(context).primaryColor,
+            //   width: 1,
+            // ),
           ),
           child: Column(
             children: [
-              Container(
-                height: 200,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(5.0),
-                    topRight: Radius.circular(5.0),
-                  ),
-                ),
-                child: model['imageUrl'] != null
-                    ? ClipRRect(
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(5.0),
-                          topRight: Radius.circular(5.0),
-                        ),
+              model['imageUrl'] != null
+                  ? ClipRRect(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(12),
+                          topRight: Radius.circular(12)),
+                      child: Container(
+                        width: double.infinity, // ให้กว้างเต็มพื้นที่ parent
+                        height: 200, // กำหนดความสูง
                         child: Image.network(
                           '${model['imageUrl']}',
-                          width: double.infinity,
-                          height: 200,
-                          fit: BoxFit.cover,
+                          fit: BoxFit.cover, // ให้ภาพขยายครอบเต็ม container
                         ),
-                      )
-                    : BlankLoading(height: 200),
-              ),
+                      ),
+                    )
+                  : BlankLoading(height: 200),
               Container(
                 width: double.infinity,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(5.0),
-                    bottomRight: Radius.circular(5.0),
-                  ),
-                  color: Color(0xFFFFFFFF),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  // color: Theme.of(context).primaryColor.withOpacity(0.1),
                 ),
                 padding: const EdgeInsets.all(12.0),
                 child: Column(

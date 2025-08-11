@@ -85,7 +85,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
             'เปลี่ยนรหัสผ่านเรียบร้อยแล้ว',
             style: TextStyle(
               fontSize: 16,
-              fontFamily: 'Sarabun',
+              fontFamily: 'Kanit',
               color: Colors.black,
               fontWeight: FontWeight.normal,
             ),
@@ -98,8 +98,8 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 "ยกเลิก",
                 style: TextStyle(
                   fontSize: 13,
-                  fontFamily: 'Sarabun',
-                  color: Color(0xFF000070),
+                  fontFamily: 'Kanit',
+                  color: Theme.of(context).primaryColor,
                   fontWeight: FontWeight.normal,
                 ),
               ),
@@ -118,7 +118,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
             'เปลี่ยนรหัสผ่านไม่สำเร็จ',
             style: TextStyle(
               fontSize: 16,
-              fontFamily: 'Sarabun',
+              fontFamily: 'Kanit',
               color: Colors.black,
               fontWeight: FontWeight.normal,
             ),
@@ -127,7 +127,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
             result['message'],
             style: TextStyle(
               fontSize: 13,
-              fontFamily: 'Sarabun',
+              fontFamily: 'Kanit',
               color: Colors.black,
               fontWeight: FontWeight.normal,
             ),
@@ -139,8 +139,8 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 "ยกเลิก",
                 style: TextStyle(
                   fontSize: 13,
-                  fontFamily: 'Sarabun',
-                  color: Color(0xFF000070),
+                  fontFamily: 'Kanit',
+                  color: Theme.of(context).primaryColor,
                   fontWeight: FontWeight.normal,
                 ),
               ),
@@ -163,16 +163,16 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
     }
   }
 
-  card() {
-    return Card(
-      color: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
-      ),
-      elevation: 5,
-      child: Padding(padding: EdgeInsets.all(15), child: contentCard()),
-    );
-  }
+  // card() {
+  //   return Card(
+  //     color: Colors.white,
+  //     shape: RoundedRectangleBorder(
+  //       borderRadius: BorderRadius.circular(15.0),
+  //     ),
+  //     // elevation: 5,
+  //     child: Padding(padding: EdgeInsets.all(15), child: contentCard()),
+  //   );
+  // }
 
   contentCard() {
     return Form(
@@ -188,11 +188,12 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
           TextFormField(
             obscureText: showTxtPasswordOld,
             style: TextStyle(
-              color: Color(0xFF000070),
+              color: Theme.of(context).primaryColor,
               fontWeight: FontWeight.normal,
-              fontFamily: 'Sarabun',
+              fontFamily: 'Kanit',
               fontSize: 15.0,
             ),
+            cursorColor: Theme.of(context).primaryColor,
             decoration: InputDecoration(
               suffixIcon: IconButton(
                 icon: Icon(
@@ -205,7 +206,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 },
               ),
               filled: true,
-              fillColor: const Color(0xFFfffadd),
+              fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
               contentPadding: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
               hintText: 'รหัสผ่านปัจจุบัน',
               border: OutlineInputBorder(
@@ -214,7 +215,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
               ),
               errorStyle: TextStyle(
                 fontWeight: FontWeight.normal,
-                fontFamily: 'Sarabun',
+                fontFamily: 'Kanit',
                 fontSize: 10.0,
               ),
             ),
@@ -231,11 +232,12 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
           TextFormField(
             obscureText: showTxtPasswordNew,
             style: TextStyle(
-              color: Color(0xFF000070),
+              color: Theme.of(context).primaryColor,
               fontWeight: FontWeight.normal,
-              fontFamily: 'Sarabun',
+              fontFamily: 'Kanit',
               fontSize: 15.0,
             ),
+            cursorColor: Theme.of(context).primaryColor,
             decoration: InputDecoration(
               suffixIcon: IconButton(
                 icon: Icon(
@@ -248,7 +250,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 },
               ),
               filled: true,
-              fillColor: const Color(0xFFfffadd),
+              fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
               contentPadding: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
               hintText: 'รหัสผ่านใหม่',
               border: OutlineInputBorder(
@@ -257,7 +259,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
               ),
               errorStyle: TextStyle(
                 fontWeight: FontWeight.normal,
-                fontFamily: 'Sarabun',
+                fontFamily: 'Kanit',
                 fontSize: 10.0,
               ),
             ),
@@ -280,11 +282,12 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
           TextFormField(
             obscureText: showTxtConPasswordNew,
             style: TextStyle(
-              color: Color(0xFF000070),
+              color: Theme.of(context).primaryColor,
               fontWeight: FontWeight.normal,
-              fontFamily: 'Sarabun',
+              fontFamily: 'Kanit',
               fontSize: 15.0,
             ),
+            cursorColor: Theme.of(context).primaryColor,
             decoration: InputDecoration(
               suffixIcon: IconButton(
                 icon: Icon(
@@ -299,7 +302,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 },
               ),
               filled: true,
-              fillColor: const Color(0xFFfffadd),
+              fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
               contentPadding: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
               hintText: 'ยืนยันรหัสผ่านใหม่',
               border: OutlineInputBorder(
@@ -308,7 +311,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
               ),
               errorStyle: TextStyle(
                 fontWeight: FontWeight.normal,
-                fontFamily: 'Sarabun',
+                fontFamily: 'Kanit',
                 fontSize: 10.0,
               ),
             ),
@@ -358,7 +361,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                       fontSize: 18.0,
                       color: Colors.white,
                       fontWeight: FontWeight.normal,
-                      fontFamily: 'Sarabun',
+                      fontFamily: 'Kanit',
                     ),
                   ),
                 ),
@@ -400,7 +403,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 fontSize: 12.0,
                 color: Theme.of(context).primaryColor,
                 fontWeight: FontWeight.normal,
-                fontFamily: 'Sarabun',
+                fontFamily: 'Kanit',
               ),
             ),
           ),
@@ -455,33 +458,34 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
     return Scaffold(
       appBar: header(context, goBack, title: 'เปลี่ยนรหัสผ่าน'),
       backgroundColor: Colors.white,
-      body: InkWell(
-        splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        onTap: () {
-          FocusScope.of(context).unfocus();
-        },
-        child: Container(
-          child: ListView(
-            controller: scrollController,
-            shrinkWrap: true,
-            physics: ClampingScrollPhysics(),
-            // padding: const EdgeInsets.all(10.0),
-            children: <Widget>[
-              new Column(
-                // alignment: Alignment.topCenter,
-                children: <Widget>[
-                  Container(
-                    alignment: Alignment.topCenter,
-                    margin: EdgeInsets.symmetric(
-                      horizontal: 15.0,
-                      // vertical: 10.0,
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () {
+            FocusScope.of(context).unfocus();
+          },
+          child: Container(
+            height: double.infinity,
+            child: ListView(
+              controller: scrollController,
+              shrinkWrap: true,
+              physics: ClampingScrollPhysics(),
+              // padding: const EdgeInsets.all(10.0),
+              children: <Widget>[
+                new Column(
+                  // alignment: Alignment.topCenter,
+                  children: <Widget>[
+                    Container(
+                      alignment: Alignment.topCenter,
+                      margin: EdgeInsets.symmetric(
+                        horizontal: 15.0,
+                        // vertical: 10.0,
+                      ),
+                      child: contentCard(),
                     ),
-                    child: contentCard(),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

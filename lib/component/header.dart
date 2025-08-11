@@ -13,7 +13,7 @@ PreferredSizeWidget header(
   return PreferredSize(
     preferredSize: const Size.fromHeight(50),
     child: AppBar(
-      backgroundColor: Color(0xFFe7b014),
+      backgroundColor: Theme.of(context).primaryColor,
       elevation: 0.0,
       centerTitle: true,
       automaticallyImplyLeading: false,

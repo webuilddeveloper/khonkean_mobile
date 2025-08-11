@@ -86,7 +86,7 @@ class _OtopProductListPageState extends State<OtopProductListPage>
             letterSpacing: 0.5,
           ),
         ),
-        backgroundColor: Color(0xFFe7b014),
+        backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.white),
         actions: [],
@@ -96,10 +96,9 @@ class _OtopProductListPageState extends State<OtopProductListPage>
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Color(0xFFe7b014),
-                Color(0xFFf4c430),
-                Color(0xFFe7b014),
-              ],
+                        Theme.of(context).primaryColor,
+                        Theme.of(context).primaryColorLight,
+                      ],
             ),
           ),
         ),
@@ -125,7 +124,7 @@ class _OtopProductListPageState extends State<OtopProductListPage>
                 Row(
                   children: [
                     Icon(Icons.inventory_2_outlined,
-                        color: Color(0xFFe7b014), size: 20),
+                        color: Theme.of(context).primaryColor, size: 20),
                     SizedBox(width: 8),
                     Text(
                       '${products.length} รายการ',
@@ -305,13 +304,13 @@ class _OtopProductListPageState extends State<OtopProductListPage>
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
-                            Color(0xFFe7b014).withOpacity(0.1),
-                            Color(0xFFf4c430).withOpacity(0.1),
+                            Theme.of(context).primaryColor.withOpacity(0.1),
+                            Theme.of(context).primaryColorLight.withOpacity(0.1),
                           ],
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: Color(0xFFe7b014).withOpacity(0.2),
+                            color: Theme.of(context).primaryColor.withOpacity(0.2),
                             blurRadius: 15,
                             offset: Offset(0, 5),
                           ),
@@ -336,7 +335,7 @@ class _OtopProductListPageState extends State<OtopProductListPage>
                               child: Center(
                                 child: CircularProgressIndicator(
                                   valueColor: AlwaysStoppedAnimation<Color>(
-                                    Color(0xFFe7b014),
+                                    Theme.of(context).primaryColor,
                                   ),
                                   strokeWidth: 2,
                                 ),
@@ -406,13 +405,13 @@ class _OtopProductListPageState extends State<OtopProductListPage>
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
-                                  Color(0xFFe7b014).withOpacity(0.2),
-                                  Color(0xFFf4c430).withOpacity(0.2),
+                                  Theme.of(context).primaryColor.withOpacity(0.2),
+                                  Theme.of(context).primaryColorLight.withOpacity(0.2),
                                 ],
                               ),
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(
-                                color: Color(0xFFe7b014).withOpacity(0.3),
+                                color: Theme.of(context).primaryColor.withOpacity(0.3),
                                 width: 1,
                               ),
                             ),
@@ -421,7 +420,7 @@ class _OtopProductListPageState extends State<OtopProductListPage>
                               style: TextStyle(
                                 fontFamily: 'Kanit',
                                 fontSize: 10,
-                                color: Color(0xFFe7b014),
+                                color: Theme.of(context).primaryColor,
                                 fontWeight: FontWeight.w600,
                                 letterSpacing: 0.5,
                               ),
@@ -441,7 +440,7 @@ class _OtopProductListPageState extends State<OtopProductListPage>
                                       fontFamily: 'Kanit',
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xFFe7b014),
+                                      color: Theme.of(context).primaryColor,
                                       letterSpacing: 0.3,
                                     ),
                                   ),
@@ -451,7 +450,7 @@ class _OtopProductListPageState extends State<OtopProductListPage>
                                       Icon(
                                         Icons.star_rounded,
                                         size: 16,
-                                        color: Color(0xFFffa726),
+                                        color: Theme.of(context).primaryColor,
                                       ),
                                       SizedBox(width: 4),
                                       Text(
@@ -472,14 +471,14 @@ class _OtopProductListPageState extends State<OtopProductListPage>
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
                                   colors: [
-                                    Color(0xFFe7b014),
-                                    Color(0xFFf4c430),
+                                    Theme.of(context).primaryColor,
+                                    Theme.of(context).primaryColorLight,
                                   ],
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Color(0xFFe7b014).withOpacity(0.3),
+                                    color: Theme.of(context).primaryColor.withOpacity(0.3),
                                     blurRadius: 10,
                                     offset: Offset(0, 4),
                                   ),

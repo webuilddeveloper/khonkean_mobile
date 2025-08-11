@@ -139,9 +139,8 @@ class _HistoryPageState extends State<HistoryPage>
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Color(0xFFe7b014),
-                Color(0xFFf4c430),
-                Color(0xFFe7b014),
+                Theme.of(context).primaryColor,
+                Theme.of(context).primaryColorLight,
               ],
             ),
           ),
@@ -193,15 +192,15 @@ class _HistoryPageState extends State<HistoryPage>
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          Color(0xFFe7b014).withOpacity(0.1),
-                          Color(0xFFe7b014).withOpacity(0.2),
+                          Theme.of(context).primaryColor.withOpacity(0.1),
+                          Theme.of(context).primaryColor.withOpacity(0.2),
                         ],
                       ),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Icon(
                       Icons.history_rounded,
-                      color: Color(0xFFe7b014),
+                      color: Theme.of(context).primaryColor,
                       size: 28,
                     ),
                   ),
@@ -235,10 +234,10 @@ class _HistoryPageState extends State<HistoryPage>
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
-                      color: Color(0xFFe7b014).withOpacity(0.1),
+                      color: Theme.of(context).primaryColor.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(15),
                       border: Border.all(
-                        color: Color(0xFFe7b014).withOpacity(0.3),
+                        color: Theme.of(context).primaryColor.withOpacity(0.3),
                       ),
                     ),
                     child: Text(
@@ -246,7 +245,7 @@ class _HistoryPageState extends State<HistoryPage>
                       style: TextStyle(
                         fontFamily: 'Kanit',
                         fontSize: 12,
-                        color: Color(0xFFe7b014),
+                        color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -542,14 +541,14 @@ class _HistoryPageState extends State<HistoryPage>
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          Color(0xFFe7b014),
-                          Color(0xFFf4c430),
+                          Theme.of(context).primaryColor,
+                          Theme.of(context).primaryColorLight,
                         ],
                       ),
                       borderRadius: BorderRadius.circular(8),
                       boxShadow: [
                         BoxShadow(
-                          color: Color(0xFFe7b014).withOpacity(0.3),
+                          color: Theme.of(context).primaryColor.withOpacity(0.3),
                           blurRadius: 8,
                           offset: Offset(0, 3),
                         ),
@@ -719,7 +718,7 @@ class _HistoryPageState extends State<HistoryPage>
                         // Navigate to detail page in the future
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFe7b014),
+                        backgroundColor: Theme.of(context).primaryColor,
                         foregroundColor: Colors.white,
                         padding: EdgeInsets.symmetric(vertical: 12),
                         shape: RoundedRectangleBorder(
@@ -750,6 +749,7 @@ class _HistoryPageState extends State<HistoryPage>
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
+        backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
@@ -790,7 +790,7 @@ class _HistoryPageState extends State<HistoryPage>
                     'ลบประวัติเรียบร้อยแล้ว',
                     style: TextStyle(fontFamily: 'Kanit'),
                   ),
-                  backgroundColor: Color(0xFFe7b014),
+                  backgroundColor: Theme.of(context).primaryColor,
                   behavior: SnackBarBehavior.floating,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -799,7 +799,7 @@ class _HistoryPageState extends State<HistoryPage>
               );
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.red[500],
+              backgroundColor: Theme.of(context).primaryColor,
               foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),

@@ -404,10 +404,10 @@ class _IdentityVerificationPageState extends State<IdentityVerificationPage> {
               'รหัสประจำตัวประชาชน',
               true,
             ),
-            labelTextFormField('* อีเมล์'),
+            labelTextFormField('* อีเมล'),
             textFormFieldNoValidator(
               txtEmail,
-              'อีเมล์',
+              'อีเมล',
               false,
               false,
             ),
@@ -445,7 +445,7 @@ class _IdentityVerificationPageState extends State<IdentityVerificationPage> {
                 vertical: 0,
               ),
               decoration: BoxDecoration(
-                color: const Color(0xFFfffadd),
+                color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(
                   10,
                 ),
@@ -455,7 +455,7 @@ class _IdentityVerificationPageState extends State<IdentityVerificationPage> {
                       decoration: const InputDecoration(
                         errorStyle: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'Sarabun',
+                          fontFamily: 'Kanit',
                           fontSize: 10.0,
                         ),
                         enabledBorder: UnderlineInputBorder(
@@ -470,7 +470,7 @@ class _IdentityVerificationPageState extends State<IdentityVerificationPage> {
                         'เพศ',
                         style: TextStyle(
                           fontSize: 15.00,
-                          fontFamily: 'Sarabun',
+                          fontFamily: 'Kanit',
                         ),
                       ),
                       value: _selectedSex,
@@ -485,7 +485,7 @@ class _IdentityVerificationPageState extends State<IdentityVerificationPage> {
                             item['title'],
                             style: const TextStyle(
                               fontSize: 15.00,
-                              fontFamily: 'Sarabun',
+                              fontFamily: 'Kanit',
                               color: Color(
                                 0xFF000070,
                               ),
@@ -499,7 +499,7 @@ class _IdentityVerificationPageState extends State<IdentityVerificationPage> {
                       decoration: const InputDecoration(
                         errorStyle: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'Sarabun',
+                          fontFamily: 'Kanit',
                           fontSize: 10.0,
                         ),
                         enabledBorder: UnderlineInputBorder(
@@ -514,7 +514,7 @@ class _IdentityVerificationPageState extends State<IdentityVerificationPage> {
                         'เพศ',
                         style: TextStyle(
                           fontSize: 15.00,
-                          fontFamily: 'Sarabun',
+                          fontFamily: 'Kanit',
                         ),
                       ),
                       // value: _selectedSex,
@@ -529,7 +529,7 @@ class _IdentityVerificationPageState extends State<IdentityVerificationPage> {
                             item['title'],
                             style: const TextStyle(
                               fontSize: 15.00,
-                              fontFamily: 'Sarabun',
+                              fontFamily: 'Kanit',
                               color: Color(
                                 0xFF000070,
                               ),

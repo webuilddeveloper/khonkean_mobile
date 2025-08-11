@@ -40,7 +40,7 @@ class _ComplainDetailState extends State<ComplainDetail> {
                         fontFamily: 'Kanit',
                         fontWeight: FontWeight.w600,
                         fontSize: 42,
-                        color: Color(0XFFe9ca61),
+                        color: Theme.of(context).primaryColorLight,
                       ),
                     ),
                   ),
@@ -86,12 +86,12 @@ class _ComplainDetailState extends State<ComplainDetail> {
                             child: Container(
                                 height: 100,
                                 decoration: BoxDecoration(
-                                  gradient: const LinearGradient(
+                                  gradient: LinearGradient(
                                     begin: Alignment.centerLeft,
                                     end: Alignment.centerRight,
                                     colors: [
-                                      Color(0xFFe7b014),
-                                      Color(0XFFfbd749)
+                                      Theme.of(context).primaryColor,
+                                      Theme.of(context).primaryColorLight,
                                     ],
                                     stops: [0.0, 0.9],
                                   ),

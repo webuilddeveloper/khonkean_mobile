@@ -20,7 +20,7 @@ datePicker(
           title!,
           style: const TextStyle(
             fontSize: 15.000,
-            fontFamily: 'Sarabun',
+            fontFamily: 'Kanit',
             color: Color(0xFFFF7514),
           ),
         ),
@@ -31,7 +31,7 @@ datePicker(
             style: const TextStyle(
               color: Color(0xFF000070),
               fontWeight: FontWeight.normal,
-              fontFamily: 'Sarabun',
+              fontFamily: 'Kanit',
               fontSize: 15.0,
             ),
             decoration: InputDecoration(

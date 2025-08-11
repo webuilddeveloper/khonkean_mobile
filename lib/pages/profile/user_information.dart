@@ -145,7 +145,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
                     ),
                     child: Icon(
                       Icons.notifications_none,
-                      color: Color(0xFF9e6e19),
+                      color: Theme.of(context).primaryColor,
                       size: 30,
                     ),
                   ),
@@ -167,12 +167,12 @@ class _UserInformationPageState extends State<UserInformationPage> {
                         width: 45,
                         decoration: BoxDecoration(
                           color: SelectedIndex == 0
-                              ? Color(0xFF9e6e19)
+                              ? Theme.of(context).primaryColor
                               : Colors.white,
                           border: Border.all(
                             color: SelectedIndex == 0
                                 ? Colors.transparent
-                                : Color(0xFF9e6e19),
+                                : Theme.of(context).primaryColor,
                           ),
                           borderRadius: BorderRadius.circular(15),
                         ),
@@ -180,12 +180,12 @@ class _UserInformationPageState extends State<UserInformationPage> {
                           child: Text(
                             'TH',
                             style: TextStyle(
-                              fontFamily: 'Sarabun',
+                              fontFamily: 'Kanit',
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                               color: SelectedIndex == 0
                                   ? Colors.white
-                                  : Color(0xFF9e6e19),
+                                  : Theme.of(context).primaryColor,
                             ),
                           ),
                         ),
@@ -203,12 +203,12 @@ class _UserInformationPageState extends State<UserInformationPage> {
                         width: 45,
                         decoration: BoxDecoration(
                           color: SelectedIndex == 1
-                              ? Color(0xFF9e6e19)
+                              ? Theme.of(context).primaryColor
                               : Colors.white,
                           border: Border.all(
                             color: SelectedIndex == 1
                                 ? Colors.transparent
-                                : Color(0xFF9e6e19),
+                                : Theme.of(context).primaryColor,
 
                             // width: 1.5,
                           ),
@@ -218,12 +218,12 @@ class _UserInformationPageState extends State<UserInformationPage> {
                           child: Text(
                             'EN',
                             style: TextStyle(
-                              fontFamily: 'Sarabun',
+                              fontFamily: 'Kanit',
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                               color: SelectedIndex == 1
                                   ? Colors.white
-                                  : Color(0xFF9e6e19),
+                                  : Theme.of(context).primaryColor,
                             ),
                           ),
                         ),
@@ -241,12 +241,12 @@ class _UserInformationPageState extends State<UserInformationPage> {
                         width: 45,
                         decoration: BoxDecoration(
                           color: SelectedIndex == 2
-                              ? Color(0xFF9e6e19)
+                              ? Theme.of(context).primaryColor
                               : Colors.white,
                           border: Border.all(
                             color: SelectedIndex == 2
                                 ? Colors.transparent
-                                : Color(0xFF9e6e19),
+                                : Theme.of(context).primaryColor,
 
                             // width: 1.5,
                           ),
@@ -256,12 +256,12 @@ class _UserInformationPageState extends State<UserInformationPage> {
                           child: Text(
                             'CH',
                             style: TextStyle(
-                              fontFamily: 'Sarabun',
+                              fontFamily: 'Kanit',
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                               color: SelectedIndex == 2
                                   ? Colors.white
-                                  : Color(0xFF9e6e19),
+                                  : Theme.of(context).primaryColor,
                             ),
                           ),
                         ),
@@ -352,14 +352,14 @@ class _UserInformationPageState extends State<UserInformationPage> {
                   children: [
                     Icon(
                       Icons.check_circle,
-                      color: Color(0xFF9e6e19),
+                      color: Theme.of(context).primaryColor,
                       size: 20,
                     ),
                     SizedBox(width: 4),
                     Text(
                       'ชาวนครพนม',
                       style: TextStyle(
-                        color: Color(0xFF9e6e19),
+                        color: Theme.of(context).primaryColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -454,7 +454,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
                           child: Text(
                             'ตั้งค่าผู้ใช้',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 20,
                                 fontWeight: FontWeight.w600,
                                 color: Theme.of(context).primaryColor),
                           ),
@@ -618,7 +618,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
                         style: TextStyle(
                           fontFamily: 'Sarabun',
                           fontWeight: FontWeight.w600,
-                          fontSize: 18.0,
+                          fontSize: 16.0,
                           color: Theme.of(context).primaryColor,
                         ),
                       ),
@@ -645,7 +645,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
                 width: 35,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xFFfffadd),
+                  color: Theme.of(context).primaryColor.withOpacity(0.07)
                 ),
                 child: Icon(
                   Icons.arrow_forward_ios,
