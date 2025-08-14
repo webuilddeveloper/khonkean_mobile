@@ -362,6 +362,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
                         color: Theme.of(context).primaryColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
+                        fontFamily: 'Kanit',
                       ),
                     ),
                   ],
@@ -397,7 +398,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
                         Text(
                           'QR Code',
                           style: TextStyle(
-                            fontFamily: 'Sarabun',
+                            fontFamily: 'Kanit',
                             fontSize: 12,
                             color: Colors.black,
                           ),
@@ -423,7 +424,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
                         Text(
                           'แก้ไขข้อมูล',
                           style: TextStyle(
-                            fontFamily: 'Sarabun',
+                            fontFamily: 'Kanit',
                             fontSize: 12,
                             color: Colors.black,
                           ),
@@ -454,9 +455,11 @@ class _UserInformationPageState extends State<UserInformationPage> {
                           child: Text(
                             'ตั้งค่าผู้ใช้',
                             style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                                color: Theme.of(context).primaryColor),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              color: Theme.of(context).primaryColor,
+                              fontFamily: 'Kanit',
+                            ),
                           ),
                         ),
                       ),
@@ -567,7 +570,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
                                 child: Text(
                                   'ออกจากระบบ',
                                   style: TextStyle(
-                                    fontFamily: 'Sarabun',
+                                    fontFamily: 'Kanit',
                                     fontSize: 15,
                                     color: Colors.red,
                                   ),
@@ -616,7 +619,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
                       child: Text(
                         title,
                         style: TextStyle(
-                          fontFamily: 'Sarabun',
+                          fontFamily: 'Kanit',
                           fontWeight: FontWeight.w600,
                           fontSize: 16.0,
                           color: Theme.of(context).primaryColor,
@@ -628,7 +631,7 @@ class _UserInformationPageState extends State<UserInformationPage> {
                       child: Text(
                         subtitle,
                         style: TextStyle(
-                          fontFamily: 'Sarabun',
+                          fontFamily: 'Kanit',
                           fontSize: 12.0,
                           color: Colors.black,
                         ),
@@ -644,9 +647,8 @@ class _UserInformationPageState extends State<UserInformationPage> {
                 height: 35,
                 width: 35,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Theme.of(context).primaryColor.withOpacity(0.07)
-                ),
+                    borderRadius: BorderRadius.circular(10),
+                    color: Theme.of(context).primaryColor.withOpacity(0.07)),
                 child: Icon(
                   Icons.arrow_forward_ios,
                   color: Theme.of(context).primaryColor,

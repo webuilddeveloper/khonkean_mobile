@@ -104,7 +104,7 @@ class _KnowledgeDetailPageState extends State<KnowledgeForm> {
                                     style: TextStyle(
                                       fontSize: 25,
                                       color: Colors.white,
-                                      fontFamily: 'Sarabun',
+                                      fontFamily: 'Kanit',
                                     ),
                                     maxLines: 2,
                                     textAlign: TextAlign.center,
@@ -115,7 +115,7 @@ class _KnowledgeDetailPageState extends State<KnowledgeForm> {
                                     style: TextStyle(
                                       fontSize: 10,
                                       color: Colors.white,
-                                      fontFamily: 'Sarabun',
+                                      fontFamily: 'Kanit',
                                     ),
                                   ),
                                 ],
@@ -156,7 +156,7 @@ class _KnowledgeDetailPageState extends State<KnowledgeForm> {
                                           style: TextStyle(
                                             color:
                                                 Theme.of(context).primaryColor,
-                                            fontFamily: 'Sarabun',
+                                            fontFamily: 'Kanit',
                                           ),
                                         ),
                                       ],
@@ -226,7 +226,7 @@ class _KnowledgeDetailPageState extends State<KnowledgeForm> {
                           style: const TextStyle(
                             fontSize: 25,
                             color: Colors.white,
-                            fontFamily: 'Sarabun',
+                            fontFamily: 'Kanit',
                           ),
                           maxLines: 2,
                           textAlign: TextAlign.center,
@@ -237,7 +237,7 @@ class _KnowledgeDetailPageState extends State<KnowledgeForm> {
                           style: const TextStyle(
                             fontSize: 10,
                             color: Colors.white,
-                            fontFamily: 'Sarabun',
+                            fontFamily: 'Kanit',
                           ),
                         ),
                       ],
@@ -289,7 +289,7 @@ class _KnowledgeDetailPageState extends State<KnowledgeForm> {
                                 'อ่าน',
                                 style: TextStyle(
                                   color: Theme.of(context).primaryColor,
-                                  fontFamily: 'Sarabun',
+                                  fontFamily: 'Kanit',
                                 ),
                               ),
                             ],
@@ -430,7 +430,7 @@ class TextDetail extends StatelessWidget {
             style: TextStyle(
               fontSize: fsTitle,
               color: color,
-              fontFamily: 'Sarabun',
+              fontFamily: 'Kanit',
             ),
           ),
         ),
@@ -442,7 +442,7 @@ class TextDetail extends StatelessWidget {
               style: TextStyle(
                 fontSize: fsValue,
                 color: color,
-                fontFamily: 'Sarabun',
+                fontFamily: 'Kanit',
               ),
               overflow: TextOverflow.ellipsis,
             ),

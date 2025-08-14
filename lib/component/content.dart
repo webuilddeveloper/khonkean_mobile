@@ -117,6 +117,7 @@ class ContentState extends State<Content> {
     return ListView(
       shrinkWrap: true, // 1st add
       physics: const ClampingScrollPhysics(), // 2nd
+      padding: EdgeInsets.zero,
       children: [
         Container(
           // width: 500.0,
@@ -138,7 +139,7 @@ class ContentState extends State<Content> {
             '${model['title']}',
             style: const TextStyle(
               fontSize: 18.0,
-              fontFamily: 'Sarabun',
+              fontFamily: 'Kanit',
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -176,7 +177,7 @@ class ContentState extends State<Content> {
                               : '${model['createBy']}',
                           style: const TextStyle(
                             fontSize: 15,
-                            fontFamily: 'Sarabun',
+                            fontFamily: 'Kanit',
                             fontWeight: FontWeight.w300,
                           ),
                           maxLines: 3,
@@ -190,7 +191,7 @@ class ContentState extends State<Content> {
                                   : '',
                               style: const TextStyle(
                                 fontSize: 10,
-                                fontFamily: 'Sarabun',
+                                fontFamily: 'Kanit',
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
@@ -198,7 +199,7 @@ class ContentState extends State<Content> {
                               'เข้าชม ${model['view']} ครั้ง',
                               style: const TextStyle(
                                 fontSize: 10,
-                                fontFamily: 'Sarabun',
+                                fontFamily: 'Kanit',
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
@@ -213,9 +214,9 @@ class ContentState extends State<Content> {
                       width: 100.0,
                       height: 35.0,
                       alignment: Alignment.centerRight,
-                      child: TextButton(
+                      child: GestureDetector(
                         // padding: EdgeInsets.all(0.0),
-                        onPressed: () {
+                        onTap: () {
                           final RenderBox box =
                               context.findRenderObject() as RenderBox;
                           Share.share(
@@ -298,32 +299,38 @@ class ContentState extends State<Content> {
   }
 
   linkButton(dynamic model) {
-    return Container(
-      alignment: Alignment.center,
-      width: double.infinity,
-      height: 45.0,
-      padding: const EdgeInsets.symmetric(horizontal: 80.0),
-      child: Material(
-        elevation: 5.0,
-        borderRadius: BorderRadius.circular(10.0),
-        child: Container(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5.0),
-            border: Border.all(
-              color: Theme.of(context).colorScheme.secondary,
-            ),
+            borderRadius: BorderRadius.circular(12.0),
+            color: Theme.of(context).primaryColor,
+            gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [
+                    Theme.of(context).primaryColor,
+                    Theme.of(context).primaryColorLight,
+                  ],
+                  stops: [
+                    0.0,
+                    0.8
+                  ]),
           ),
-          child: MaterialButton(
-            minWidth: MediaQuery.of(context).size.width,
-            onPressed: () {
+          child: GestureDetector(
+            // minWidth: MediaQuery.of(context).size.width,
+            onTap: () {
               launchURL('${model['linkUrl']}');
             },
             child: Text(
               '${model['textButton']}',
               style: TextStyle(
-                color: Theme.of(context).colorScheme.secondary,
-                fontFamily: 'Sarabun',
+                // color: Theme.of(context).colorScheme.secondary,
+                color: Colors.white,
+                fontFamily: 'Kanit',
               ),
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
@@ -331,7 +338,7 @@ class ContentState extends State<Content> {
             ),
           ),
         ),
-      ),
+      ],
     );
   }
 
@@ -347,7 +354,7 @@ class ContentState extends State<Content> {
         child: const Text(
           'เปิดเอกสารแนบ',
           style: TextStyle(
-            fontFamily: 'Sarabun',
+            fontFamily: 'Kanit',
             fontSize: 14.0,
             color: Colors.blue,
             decoration: TextDecoration.underline,

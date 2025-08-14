@@ -88,7 +88,7 @@ class _KnowledgeListVerticalState extends State<KnowledgeListVertical> {
                   'เกิดข้อผิดพลาด: ${snapshot.error}',
                   style: const TextStyle(
                     fontSize: 16,
-                    fontFamily: 'Sarabun',
+                    fontFamily: 'Kanit',
                     color: Colors.red,
                   ),
                   textAlign: TextAlign.center,
@@ -113,7 +113,7 @@ class _KnowledgeListVerticalState extends State<KnowledgeListVertical> {
                   'ไม่พบข้อมูล',
                   style: TextStyle(
                     fontSize: 18,
-                    fontFamily: 'Sarabun',
+                    fontFamily: 'Kanit',
                     color: Color.fromRGBO(0, 0, 0, 0.6),
                     fontWeight: FontWeight.w500,
                   ),
@@ -144,7 +144,7 @@ class _KnowledgeListVerticalState extends State<KnowledgeListVertical> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: InkWell(
+                child: GestureDetector(
                   onTap: () {
                     if (item['code'] != null) {
                       Navigator.push(
@@ -156,7 +156,7 @@ class _KnowledgeListVerticalState extends State<KnowledgeListVertical> {
                       );
                     }
                   },
-                  borderRadius: BorderRadius.circular(12),
+                  // borderRadius: BorderRadius.circular(12),
                   child: Container(
                     padding: const EdgeInsets.all(8),
                     child: Column(
@@ -210,7 +210,7 @@ class _KnowledgeListVerticalState extends State<KnowledgeListVertical> {
                             item['title'] ?? 'ไม่มีชื่อ',
                             style: const TextStyle(
                               fontSize: 14,
-                              fontFamily: 'Sarabun',
+                              fontFamily: 'Kanit',
                               fontWeight: FontWeight.w600,
                               color: Color.fromRGBO(0, 0, 0, 0.8),
                             ),

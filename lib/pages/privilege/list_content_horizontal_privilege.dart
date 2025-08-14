@@ -56,14 +56,14 @@ class _ListContentHorizontalPrivilege
                     Container(
                       alignment: Alignment.centerLeft,
                       padding: EdgeInsets.only(left: 10.0),
-                      margin: EdgeInsets.only(bottom: 5.0, top: 10.0),
+                      margin: EdgeInsets.only(bottom: 10.0, top: 5.0),
                       child: Text(
                         widget.title!,
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,
-                          fontFamily: 'Sarabun',
+                          fontFamily: 'Kanit',
                         ),
                       ),
                     ),
@@ -73,11 +73,10 @@ class _ListContentHorizontalPrivilege
                       },
                       child: Container(
                         padding: EdgeInsets.only(right: 10.0),
-                        margin: EdgeInsets.only(bottom: 5.0, top: 10.0),
+                        margin: EdgeInsets.only(bottom: 10.0, top: 5.0),
                         child: Text(
                           'ดูทั้งหมด',
-                          style:
-                              TextStyle(fontSize: 12.0, fontFamily: 'Sarabun'),
+                          style: TextStyle(fontSize: 12.0, fontFamily: 'Kanit'),
                         ),
                       ),
                     ),
@@ -201,34 +200,42 @@ myCard(int index, int lastIndex, dynamic model, BuildContext context,
               ? EdgeInsets.only(left: 5.0, right: 15.0)
               : EdgeInsets.symmetric(horizontal: 5.0),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5), color: Colors.transparent),
+        borderRadius: BorderRadius.circular(10),
+        // color: Theme.of(context).primaryColor,
+        boxShadow: [
+          BoxShadow(
+                color: Colors.grey.withOpacity(0.3),
+                spreadRadius: 0,
+                blurRadius: 10,
+                offset: const Offset(0, 0), // changes position of shadow
+              ),
+        ],
+      ),
       width: 170.0,
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
-          Container(
-            height: 150.0,
-            decoration: BoxDecoration(
-              borderRadius: new BorderRadius.only(
-                topLeft: const Radius.circular(5.0),
-                topRight: const Radius.circular(5.0),
-              ),
-              color: Colors.white.withAlpha(220),
-              image: DecorationImage(
-                fit: BoxFit.contain,
-                image: NetworkImage(model['imageUrl']),
-              ),
+          ClipRRect(
+            borderRadius: new BorderRadius.only(
+              topLeft: const Radius.circular(10),
+              topRight: const Radius.circular(10),
+            ),
+            child: Image.network(
+              model['imageUrl'],
+              // height: 100,
+              width: double.infinity,
+              fit: BoxFit.contain,
             ),
           ),
           Container(
             margin: EdgeInsets.only(top: 150.0),
             padding: EdgeInsets.all(5),
             alignment: Alignment.topLeft,
-            height: 40,
+            height: 42,
             decoration: BoxDecoration(
               borderRadius: new BorderRadius.only(
-                bottomLeft: const Radius.circular(5.0),
-                bottomRight: const Radius.circular(5.0),
+                bottomLeft: const Radius.circular(10.0),
+                bottomRight: const Radius.circular(10.0),
               ),
               color: Theme.of(context).primaryColor,
             ),
@@ -239,9 +246,9 @@ myCard(int index, int lastIndex, dynamic model, BuildContext context,
                   model['title'],
                   style: TextStyle(
                     fontWeight: FontWeight.w300,
-                    fontSize: 10,
+                    fontSize: 12,
                     color: Color(0xFFFFFFFF),
-                    fontFamily: 'Sarabun',
+                    fontFamily: 'Kanit',
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -249,8 +256,8 @@ myCard(int index, int lastIndex, dynamic model, BuildContext context,
                   dateStringToDate(model['createDate']),
                   style: TextStyle(
                     fontWeight: FontWeight.w300,
-                    fontSize: 8,
-                    fontFamily: 'Sarabun',
+                    fontSize: 10,
+                    fontFamily: 'Kanit',
                     color: Color(0xFFFFFFFF),
                   ),
                   overflow: TextOverflow.ellipsis,

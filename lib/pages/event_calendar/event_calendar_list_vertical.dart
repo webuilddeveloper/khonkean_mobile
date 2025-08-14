@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marine_mobile/pages/blank_page/blank_loading.dart';
 
 import '../blank_page/blank_data.dart';
 import 'event_calendar_form.dart';
@@ -47,7 +48,7 @@ class _EventCalendarListVertical extends State<EventCalendarListVertical> {
                 'ไม่พบข้อมูล',
                 style: TextStyle(
                   fontSize: 18,
-                  fontFamily: 'Sarabun',
+                  fontFamily: 'Kanit',
                   color: Color.fromRGBO(0, 0, 0, 0.6),
                 ),
               ),
@@ -56,8 +57,9 @@ class _EventCalendarListVertical extends State<EventCalendarListVertical> {
             return Container(
               padding: EdgeInsets.all(10.0),
               child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
+                  childAspectRatio: 1 / 2,
                 ),
                 physics: ClampingScrollPhysics(),
                 shrinkWrap: true,
@@ -129,7 +131,7 @@ class _EventCalendarListVertical extends State<EventCalendarListVertical> {
   }
 
   myCard(int index, int lastIndex, dynamic model, BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
@@ -155,33 +157,65 @@ class _EventCalendarListVertical extends State<EventCalendarListVertical> {
         child: Column(
           // alignment: Alignment.topCenter,
           children: [
-            Expanded(
-              child: Container(
-                height: 157.0,
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: const Radius.circular(5.0),
-                    topRight: const Radius.circular(5.0),
-                  ),
-                  color: Colors.white.withAlpha(220),
-                  image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: NetworkImage(model['imageUrl']),
-                  ),
+            // Expanded(
+            //   child:
+            //   Container(
+            //     height: 160.0,
+            //     decoration: BoxDecoration(
+            //       borderRadius: const BorderRadius.only(
+            //         topLeft: const Radius.circular(5.0),
+            //         topRight: const Radius.circular(5.0),
+            //       ),
+            //       color: Colors.white.withAlpha(220),
+            //       image: DecorationImage(
+            //         fit: BoxFit.fill,
+            //         image: NetworkImage(model['imageUrl']),
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            Container(
+              height: 170.0,
+              // width: 170.0,
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(10.0),
+                  topRight: Radius.circular(10.0),
+                ),
+                // color: Colors.grey.withAlpha(220),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(model['imageUrl']),
                 ),
               ),
             ),
+            // ClipRRect(
+            //   borderRadius: BorderRadius.only(
+            //       topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+            //   child: Container(
+            //     height: 150,
+            //     width: double.infinity,
+            //     child: model['imageUrl'] != null
+            //         ? Image.network(
+            //             '${model['imageUrl']}',
+            //             fit: BoxFit.cover,
+            //           )
+            //         : BlankLoading(
+            //             height: 200,
+            //           ),
+            //   ),
+            // ),
             Container(
-              // margin: EdgeInsets.only(top: 157.0),
-              padding: EdgeInsets.all(5),
+              //  margin: EdgeInsets.only(top: 15.0),
+              padding: const EdgeInsets.all(5),
               alignment: Alignment.topLeft,
-              height: 40,
+              height: 48.0,
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.only(
-                  bottomLeft: const Radius.circular(5.0),
-                  bottomRight: const Radius.circular(5.0),
+                  bottomLeft: const Radius.circular(10.0),
+                  bottomRight: const Radius.circular(10.0),
                 ),
-                color: Colors.black.withAlpha(10),
+                color: Theme.of(context).primaryColor,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -190,9 +224,9 @@ class _EventCalendarListVertical extends State<EventCalendarListVertical> {
                     model['title'],
                     style: const TextStyle(
                       // fontWeight: FontWeight.bold,
-                      fontSize: 10,
-                      // color: Colors.white,
-                      fontFamily: 'Sarabun',
+                      fontSize: 12,
+                      color: Colors.white,
+                      fontFamily: 'Kanit',
                     ),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,

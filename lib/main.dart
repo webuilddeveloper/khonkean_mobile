@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         primaryColorDark: const Color(0xFF9C0000),
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-        fontFamily: 'Sarabun',
+        fontFamily: 'Kanit',
       ),
       home: SplashPage(),
       builder: (context, child) {

@@ -109,8 +109,8 @@ class _CarouselRotation extends State<CarouselRotation> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     color: _current == index
-                        ? const Color(0xFFfad84c)
-                        : const Color(0xFF9e6e19),
+                        ? Theme.of(context).primaryColorDark
+                        : Theme.of(context).primaryColorLight,
                   ),
                 );
               }).toList(),

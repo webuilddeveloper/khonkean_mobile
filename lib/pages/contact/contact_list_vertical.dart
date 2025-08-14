@@ -52,7 +52,7 @@ class _ContactListVertical extends State<ContactListVertical> {
                 'ไม่พบข้อมูล',
                 style: TextStyle(
                   fontSize: 18,
-                  fontFamily: 'Sarabun',
+                  fontFamily: 'Kanit',
                   color: Color.fromRGBO(0, 0, 0, 0.6),
                 ),
               ),
@@ -133,7 +133,7 @@ class _ContactListVertical extends State<ContactListVertical> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 16,
-                                                fontFamily: 'Sarabun',
+                                                fontFamily: 'Kanit',
                                                 color: Theme.of(context)
                                                     .primaryColor,
                                               ),
@@ -151,7 +151,7 @@ class _ContactListVertical extends State<ContactListVertical> {
                                               '${snapshot.data[index]['title']}',
                                               style: TextStyle(
                                                 fontSize: 12.0,
-                                                fontFamily: 'Sarabun',
+                                                fontFamily: 'Kanit',
                                                 color: Color.fromRGBO(
                                                     0, 0, 0, 0.6),
                                               ),

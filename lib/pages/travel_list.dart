@@ -125,7 +125,7 @@ class _TravelPlacesListState extends State<TravelPlacesList> {
                   ),
                   prefixIcon: Icon(
                     Icons.search,
-                    color: Color(0xFFe7b014),
+                    color: Theme.of(context).primaryColor,
                   ),
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.all(16),
@@ -158,7 +158,7 @@ class _TravelPlacesListState extends State<TravelPlacesList> {
                     icon: const Icon(Icons.clear, size: 16),
                     label: const Text('ล้างการค้นหา'),
                     style: TextButton.styleFrom(
-                      foregroundColor: Color(0xFFe7b014),
+                      foregroundColor: Theme.of(context).primaryColor,
                       textStyle: const TextStyle(fontFamily: 'Kanit'),
                     ),
                   ),
@@ -255,7 +255,7 @@ class _TravelPlacesListState extends State<TravelPlacesList> {
                                   loadingProgress.expectedTotalBytes!
                               : null,
                           strokeWidth: 3,
-                          color: Color(0xFFe7b014),
+                          color: Theme.of(context).primaryColor,
                         ),
                       ),
                     );
@@ -299,7 +299,7 @@ class _TravelPlacesListState extends State<TravelPlacesList> {
                       fontSize: 18,
                       fontFamily: 'Kanit',
                       fontWeight: FontWeight.w600,
-                      color: Color(0xFFe7b014),
+                      color: Theme.of(context).primaryColor
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -374,7 +374,7 @@ class _TravelPlacesListState extends State<TravelPlacesList> {
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFe7b014),
+                        backgroundColor: Theme.of(context).primaryColor,
                         foregroundColor: Colors.white,
                         elevation: 0,
                         padding: const EdgeInsets.symmetric(vertical: 12),

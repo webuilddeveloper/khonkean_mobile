@@ -62,17 +62,15 @@ class _CategorySelectorState extends State<CategorySelector> {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                        color: index == selectedIndex
-                            ? Theme.of(context).primaryColor
-                            : Colors.white,
-                        borderRadius: BorderRadius.circular(10)
-                        // border: index == selectedIndex
-                        //     ? Border(
-                        //         bottom: BorderSide(
-                        //             width: 2,
-                        //             color: Theme.of(context).primaryColor))
-                        //     : null,
-                        ),
+                      color: index == selectedIndex
+                          ? Theme.of(context).primaryColor
+                          : Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      border: index != selectedIndex
+                          ? Border.all(
+                              width: 1, color: Theme.of(context).primaryColor)
+                          : null,
+                    ),
                     padding: EdgeInsets.symmetric(
                       horizontal: 10.0,
                       vertical: 5.0,
@@ -86,10 +84,10 @@ class _CategorySelectorState extends State<CategorySelector> {
                         // decoration: index == selectedIndex
                         //     ? TextDecoration.underline
                         //     : null,
-                        fontSize: index == selectedIndex ? 15.0 : 13.0,
-                        fontWeight: FontWeight.normal,
+                        fontSize: 15,
+                        fontWeight: index == selectedIndex ? FontWeight.bold : FontWeight.normal,
                         // letterSpacing: 1.2,
-                        fontFamily: 'Sarabun',
+                        fontFamily: 'Kanit',
                       ),
                     ),
                   ),

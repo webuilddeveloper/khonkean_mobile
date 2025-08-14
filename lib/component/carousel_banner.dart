@@ -103,8 +103,8 @@ class _CarouselBanner extends State<CarouselBanner> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
                           color: _current == index
-                              ? Color(0xFFfad84c)
-                              : Color(0xFF9e6e19),
+                              ? Theme.of(context).primaryColorLight
+                              : Theme.of(context).primaryColorDark,
                           // : Color.fromRGBO(0, 0, 0, 0.4),
                         ),
                       );

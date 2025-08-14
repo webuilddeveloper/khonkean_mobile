@@ -79,47 +79,62 @@ class _PoiForm extends State<PoiForm> {
           overScroll.disallowIndicator();
           return false;
         },
-        child: SmartRefresher(
-          enablePullDown: false,
-          enablePullUp: true,
-          footer: ClassicFooter(
-            loadingText: ' ',
-            canLoadingText: ' ',
-            idleText: ' ',
-            idleIcon: Icon(Icons.arrow_upward, color: Colors.transparent),
-          ),
-          controller: _refreshController,
-          onLoading: _onLoading,
-          child: Stack(
-            children: [
-              ListView(
-                // shrinkWrap: true,
+        child: Stack(
+          children: [
+            SmartRefresher(
+              enablePullDown: false,
+              enablePullUp: true,
+              footer: ClassicFooter(
+                loadingText: ' ',
+                canLoadingText: ' ',
+                idleText: ' ',
+                idleIcon: Icon(Icons.arrow_upward, color: Colors.transparent),
+              ),
+              controller: _refreshController,
+              onLoading: _onLoading,
+              child: ListView(
+                physics: ClampingScrollPhysics(),
                 padding: EdgeInsets.zero,
                 children: [
-                  // Stack(
-                  //   children: [
-                      
-                  //   ],
-                  // ),
                   ContentPoi(
-                        pathShare: 'content/poi/',
-                        code: widget.code,
-                        url: '${poiApi}read',
-                        model: widget.model,
-                        urlGallery: widget.urlGallery,
-                      ),
+                    pathShare: 'content/poi/',
+                    code: widget.code,
+                    url: '${poiApi}read',
+                    model: widget.model,
+                    urlGallery: widget.urlGallery,
+                  ),
                   widget.urlComment != '' ? comment! : Container(),
                 ],
               ),
-              Positioned(
-                right: 0,
-                top: statusBarHeight + 5,
-                child: Container(
-                  child: buttonCloseBack(context),
+            ),
+            Positioned(
+              right: 0,
+              top: 0,
+              child: Container(
+                height: 100,
+                width: MediaQuery.of(context).size.width,
+                decoration: new BoxDecoration(
+                  color: Colors.grey,
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.black54,
+                      Colors.transparent,
+                    ],
+                    stops: [0.0, 0.9],
+                  ),
                 ),
               ),
-            ],
-          ),
+            ),
+            Positioned(
+              right: 0,
+              top: statusBarHeight + 5,
+              child: Container(
+                child: buttonCloseBack(context),
+              ),
+            ),
+          ],
         ),
       ),
     );

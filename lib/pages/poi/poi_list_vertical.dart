@@ -37,7 +37,7 @@ class _PoiListVertical extends State<PoiListVertical> {
                 'ไม่พบข้อมูล',
                 style: TextStyle(
                   fontSize: 18,
-                  fontFamily: 'Sarabun',
+                  fontFamily: 'Kanit',
                   color: Color.fromRGBO(0, 0, 0, 0.6),
                 ),
               ),
@@ -104,7 +104,7 @@ class _PoiListVertical extends State<PoiListVertical> {
                             margin: EdgeInsets.only(top: 150.0),
                             padding: const EdgeInsets.all(5),
                             alignment: Alignment.topLeft,
-                            height: 40.0,
+                            height: 48.0,
                             decoration: BoxDecoration(
                               borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(5.0),
@@ -119,9 +119,9 @@ class _PoiListVertical extends State<PoiListVertical> {
                                   snapshot.data[index]['title'],
                                   style: TextStyle(
                                     fontWeight: FontWeight.normal,
-                                    fontSize: 10,
+                                    fontSize: 15,
                                     color: Colors.white,
-                                    fontFamily: 'Sarabun',
+                                    fontFamily: 'Kanit',
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 1,
@@ -135,8 +135,8 @@ class _PoiListVertical extends State<PoiListVertical> {
                                           " กิโลเมตร",
                                   style: TextStyle(
                                     fontWeight: FontWeight.normal,
-                                    fontSize: 8,
-                                    fontFamily: 'Sarabun',
+                                    fontSize: 12,
+                                    fontFamily: 'Kanit',
                                     color: Colors.white,
                                   ),
                                   overflow: TextOverflow.ellipsis,

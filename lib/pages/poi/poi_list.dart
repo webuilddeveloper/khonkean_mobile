@@ -211,7 +211,8 @@ class _PoiList extends State<PoiList> {
   SlidingUpPanel _buildMap() {
     double _panelHeightOpen = MediaQuery.of(context).size.height -
         (MediaQuery.of(context).padding.top + 50);
-    double _panelHeightClosed = 90;
+    double _panelHeightClosed = MediaQuery.of(context).size.height -
+        (MediaQuery.of(context).padding.bottom + 500);
 
     return SlidingUpPanel(
       maxHeight: _panelHeightOpen,
@@ -401,7 +402,7 @@ class _PoiList extends State<PoiList> {
               child: Text(
                 'จุดบริการ',
                 style: TextStyle(
-                  fontFamily: 'Sarabun',
+                  fontFamily: 'Kanit',
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
@@ -470,7 +471,7 @@ class _PoiList extends State<PoiList> {
                 'ไม่พบข้อมูล',
                 style: TextStyle(
                   fontSize: 18,
-                  fontFamily: 'Sarabun',
+                  fontFamily: 'Kanit',
                   color: Colors.grey,
                 ),
               ),
@@ -605,7 +606,7 @@ class _PoiList extends State<PoiList> {
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                        fontFamily: 'Sarabun',
+                        fontFamily: 'Kanit',
                         fontSize: 15.0,
                         fontWeight: FontWeight.normal,
                         color: Color(0xFF4D4D4D),
@@ -613,10 +614,10 @@ class _PoiList extends State<PoiList> {
                     ),
                     SizedBox(height: 4),
                     Text(
-                      'วันที่ ${dateStringToDate(model['createDate'] ?? '')}',
+                      'วันที่ ${dateStringToDateStringFormat(model['createDate'] ?? '', type: '-')}',
                       style: const TextStyle(
                         color: Color(0xFF8F8F8F),
-                        fontFamily: 'Sarabun',
+                        fontFamily: 'Kanit',
                         fontSize: 13.0,
                       ),
                     ),

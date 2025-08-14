@@ -55,11 +55,11 @@ class _ListContentHorizontalPrivilegeSuggested
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
-                  fontFamily: 'Sarabun',
+                  fontFamily: 'Kanit',
                 ),
               ),
             ),
-            InkWell(
+            GestureDetector(
               onTap: () {
                 widget.navigationList!();
               },
@@ -68,7 +68,7 @@ class _ListContentHorizontalPrivilegeSuggested
                   margin: EdgeInsets.only(bottom: 5.0),
                   child: Text(
                     'ดูทั้งหมด',
-                    style: TextStyle(fontSize: 12.0, fontFamily: 'Sarabun'),
+                    style: TextStyle(fontSize: 12.0, fontFamily: 'Kanit'),
                   )),
             ),
           ],
@@ -118,76 +118,85 @@ renderCard(String title, String url, Future<dynamic> model, String urlComment,
 
 myCard(int index, int lastIndex, dynamic model, BuildContext context,
     Function navigationForm) {
-  return InkWell(
+  return GestureDetector(
     onTap: () {
       navigationForm(model['code'], model);
     },
     child: Column(
       children: [
-        Column(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                // color: Color(0xFF000000),
+        SizedBox(
+          height: 10,
+        ),
+        Container(
+          // padding: EdgeInsets.only(top: 10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            // color: Color(0xFF000000),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.7),
+                spreadRadius: 0,
+                blurRadius: 5,
+                offset: const Offset(0, 4), // changes position of shadow
               ),
-              margin: index == 0
-                  ? EdgeInsets.only(left: 10.0, right: 5.0)
-                  : index == lastIndex - 1
-                      ? EdgeInsets.only(left: 5.0, right: 15.0)
-                      : EdgeInsets.symmetric(horizontal: 5.0),
-              width: 300.0,
-              child: Column(
-                children: [
-                  Container(
-                    child: Image.network(
-                      '${model['imageUrl']}',
-                      height: 200,
-                      width: double.infinity,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  Container(
-                    height: 45,
-                    width: 350,
-                    alignment: Alignment.topLeft,
-                    decoration: BoxDecoration(
-                      borderRadius: new BorderRadius.only(
-                        bottomLeft: const Radius.circular(5.0),
-                        bottomRight: const Radius.circular(5.0),
-                      ),
-                      color: Theme.of(context).primaryColor,
-                    ),
-                    padding: EdgeInsets.all(5.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          '${model['title']}',
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'Sarabun',
-                            fontSize: 13.0,
-                          ),
-                        ),
-                        Text(
-                          '${model['title']}',
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w300,
-                            fontFamily: 'Sarabun',
-                            fontSize: 10.0,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+            ],
+          ),
+          margin: index == 0
+              ? EdgeInsets.only(left: 10.0, right: 5.0)
+              : index == lastIndex - 1
+                  ? EdgeInsets.only(left: 10.0, right: 15.0)
+                  : EdgeInsets.symmetric(horizontal: 10.0),
+          width: 300.0,
+          child: Column(
+            children: [
+              Container(
+                child: Image.network(
+                  '${model['imageUrl']}',
+                  height: 200,
+                  width: double.infinity,
+                  fit: BoxFit.contain,
+                ),
               ),
-            ),
-          ],
+              Container(
+                height: 55,
+                width: 350,
+                alignment: Alignment.topLeft,
+                decoration: BoxDecoration(
+                  borderRadius: new BorderRadius.only(
+                    bottomLeft: const Radius.circular(10.0),
+                    bottomRight: const Radius.circular(10.0),
+                  ),
+                  color: Theme.of(context).primaryColor,
+                ),
+                padding: EdgeInsets.all(5.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${model['title']}',
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontFamily: 'Kanit',
+                          fontSize: 16.0,
+                          color: Colors.white),
+                    ),
+                    Text(
+                      '${model['title']}',
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontFamily: 'Kanit',
+                          fontSize: 12.0,
+                          color: Colors.white),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     ),

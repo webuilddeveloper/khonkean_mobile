@@ -79,21 +79,22 @@ class _NewsForm extends State<NewsForm> {
           overScroll.disallowIndicator();
           return false;
         },
-        child: SmartRefresher(
-          enablePullDown: false,
-          enablePullUp: true,
-          footer: ClassicFooter(
-            loadingText: ' ',
-            canLoadingText: ' ',
-            idleText: ' ',
-            idleIcon: Icon(Icons.arrow_upward, color: Colors.transparent),
-          ),
-          controller: _refreshController,
-          onLoading: _onLoading,
-          child: ListView(
-            shrinkWrap: true,
-            children: [
-              Stack(
+        child: Stack(
+          children: [
+            SmartRefresher(
+              enablePullDown: false,
+              enablePullUp: true,
+              footer: ClassicFooter(
+                loadingText: ' ',
+                canLoadingText: ' ',
+                idleText: ' ',
+                idleIcon: Icon(Icons.arrow_upward, color: Colors.transparent),
+              ),
+              controller: _refreshController,
+              onLoading: _onLoading,
+              child: ListView(
+                physics: ClampingScrollPhysics(),
+                padding: EdgeInsets.zero,
                 children: [
                   Content(
                     pathShare: 'content/news/',
@@ -102,20 +103,39 @@ class _NewsForm extends State<NewsForm> {
                     model: widget.model,
                     urlGallery: widget.urlGallery,
                   ),
-                  Positioned(
-                    right: 0,
-                    top: statusBarHeight + 5,
-                    child: Container(
-                      child: buttonCloseBack(context),
-                    ),
-                  ),
+                  widget.urlComment != '' ? comment! : Container(),
                 ],
-                // overflow: Overflow.clip,
               ),
-              // ),
-              widget.urlComment != '' ? comment! : Container(),
-            ],
-          ),
+            ),
+            Positioned(
+              right: 0,
+              top: 0,
+              child: Container(
+                height: 100,
+                width: MediaQuery.of(context).size.width,
+                decoration: new BoxDecoration(
+                  color: Colors.grey,
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.black54,
+                      Colors.transparent,
+                    ],
+                    stops: [0.0, 0.9],
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              right: 0,
+              top: statusBarHeight + 5,
+              child: Container(
+                child: buttonCloseBack(context),
+              ),
+            ),
+          ],
+          // overflow: Overflow.clip,
         ),
       ),
     );

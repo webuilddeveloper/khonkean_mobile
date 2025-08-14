@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marine_mobile/shared/extension.dart';
 
 import 'privilege_form.dart';
 
@@ -32,7 +33,7 @@ class _PrivilegeListVertical extends State<PrivilegeListVertical> {
                 'ไม่พบข้อมูล',
                 style: TextStyle(
                   fontSize: 18,
-                  fontFamily: 'Sarabun',
+                  fontFamily: 'Kanit',
                   color: Color.fromRGBO(0, 0, 0, 0.6),
                 ),
               ),
@@ -87,7 +88,7 @@ class _PrivilegeListVertical extends State<PrivilegeListVertical> {
                     offset: Offset(0, 3), // changes position of shadow
                   ),
                 ],
-                borderRadius: new BorderRadius.circular(6.0),
+                borderRadius: new BorderRadius.circular(10.0),
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10.0),
@@ -123,20 +124,27 @@ class _PrivilegeListVertical extends State<PrivilegeListVertical> {
             ? EdgeInsets.only(bottom: 5.0, right: 5.0)
             : EdgeInsets.only(bottom: 5.0, left: 5.0),
         decoration: BoxDecoration(
-          borderRadius: new BorderRadius.circular(5),
+          borderRadius: new BorderRadius.circular(10),
           color: Color(0xFFFFFFFF),
+          boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.08),
+                blurRadius: 10,
+                offset: Offset(0, 0),
+              ),
+            ],
         ),
         child: Column(
           children: [
             Expanded(
               child: Container(
-                height: 157.0,
+                height: 160.0,
                 decoration: BoxDecoration(
                   borderRadius: new BorderRadius.only(
-                    topLeft: const Radius.circular(5.0),
-                    topRight: const Radius.circular(5.0),
+                    topLeft: const Radius.circular(10.0),
+                    topRight: const Radius.circular(10.0),
                   ),
-                  color: Colors.white.withAlpha(220),
+                  color: Colors.white,
                   image: DecorationImage(
                     fit: BoxFit.contain,
                     image: NetworkImage(model['imageUrl']),
@@ -147,27 +155,39 @@ class _PrivilegeListVertical extends State<PrivilegeListVertical> {
             Container(
               padding: EdgeInsets.all(5),
               alignment: Alignment.topLeft,
-              height: 40,
+              height: 45,
               decoration: BoxDecoration(
                 borderRadius: new BorderRadius.only(
-                  bottomLeft: const Radius.circular(5.0),
-                  bottomRight: const Radius.circular(5.0),
+                  bottomLeft: const Radius.circular(10.0),
+                  bottomRight: const Radius.circular(10.0),
                 ),
                 color: Theme.of(context).primaryColor,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     model['title'],
                     style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 10,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
                       color: Color(0xFFFFFFFF),
-                      fontFamily: 'Sarabun',
+                      fontFamily: 'Kanit',
                     ),
+                    maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
+                  Text(
+                  dateStringToDate(model['createDate']),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 10,
+                    fontFamily: 'Kanit',
+                    color: Color(0xFFFFFFFF),
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
                 ],
               ),
             ),

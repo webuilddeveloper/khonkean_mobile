@@ -60,13 +60,12 @@ class _NewsListVertical extends State<NewsListVertical> {
                 'ไม่พบข้อมูล',
                 style: TextStyle(
                   fontSize: 18,
-                  fontFamily: 'Sarabun',
+                  fontFamily: 'Kanit',
                   color: Color.fromRGBO(0, 0, 0, 0.6),
                 ),
               ),
             );
           } else {
-            print('1');
             return Container(
               color: Colors.transparent,
               alignment: Alignment.center,
@@ -101,14 +100,14 @@ class _NewsListVertical extends State<NewsListVertical> {
                             SizedBox(height: 10),
                             Container(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
+                                borderRadius: BorderRadius.circular(10),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.grey.withOpacity(0.3),
+                                    color: Colors.grey.withOpacity(0.7),
                                     spreadRadius: 0,
-                                    blurRadius: 7,
+                                    blurRadius: 5,
                                     offset: const Offset(
-                                        1, 2), // changes position of shadow
+                                        0, 4), // changes position of shadow
                                   ),
                                 ],
                               ),
@@ -117,30 +116,35 @@ class _NewsListVertical extends State<NewsListVertical> {
                               width: 600,
                               child: Column(
                                 children: [
-                                  Container(
-                                    constraints: const BoxConstraints(
-                                      minHeight: 200,
-                                      maxHeight: 200,
-                                      minWidth: double.infinity,
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(10),
+                                        topRight: Radius.circular(10)),
+                                    child: Container(
+                                      constraints: const BoxConstraints(
+                                        minHeight: 200,
+                                        maxHeight: 200,
+                                        minWidth: double.infinity,
+                                      ),
+                                      child: snapshot.data[index]['imageUrl'] !=
+                                              null
+                                          ? Image.network(
+                                              '${snapshot.data[index]['imageUrl']}',
+                                              fit: BoxFit.cover,
+                                            )
+                                          : BlankLoading(
+                                              height: 200,
+                                            ),
                                     ),
-                                    child:
-                                        snapshot.data[index]['imageUrl'] != null
-                                            ? Image.network(
-                                                '${snapshot.data[index]['imageUrl']}',
-                                                fit: BoxFit.cover,
-                                              )
-                                            : BlankLoading(
-                                                height: 200,
-                                              ),
                                   ),
                                   Container(
                                     height: 60,
-                                    decoration: const BoxDecoration(
+                                    decoration: BoxDecoration(
                                       borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(5.0),
-                                        bottomRight: Radius.circular(5.0),
+                                        bottomLeft: Radius.circular(10.0),
+                                        bottomRight: Radius.circular(10.0),
                                       ),
-                                      color: Color(0xFFFFFFFF),
+                                      color: Theme.of(context).primaryColor,
                                     ),
                                     padding: const EdgeInsets.all(5.0),
                                     alignment: Alignment.centerLeft,
@@ -149,13 +153,13 @@ class _NewsListVertical extends State<NewsListVertical> {
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
                                       style: const TextStyle(
-                                        fontFamily: 'Sarabun',
-                                        fontSize: 15.0,
-                                        fontWeight: FontWeight.normal,
-                                      ),
+                                          fontFamily: 'Kanit',
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.normal,
+                                          color: Colors.white),
                                     ),
                                   ),
-                                  SizedBox(height: 10),
+                                  // SizedBox(height: 10),
                                 ],
                               ),
                             ),

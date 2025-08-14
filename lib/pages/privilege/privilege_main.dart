@@ -74,108 +74,115 @@ class _PrivilegeMain extends State<PrivilegeMain> {
           onTap: () {
             FocusScope.of(context).requestFocus(new FocusNode());
           },
-          child: SmartRefresher(
-            enablePullDown: false,
-            enablePullUp: true,
-            footer: ClassicFooter(
-              loadingText: ' ',
-              canLoadingText: ' ',
-              idleText: ' ',
-              idleIcon: Icon(Icons.arrow_upward, color: Colors.transparent),
-            ),
-            controller: _refreshController,
-            onLoading: _onLoading,
-            child: ListView(
-              children: [
-                SizedBox(
-                  height: 5.0,
+          child: Column(
+            children: [
+              SizedBox(
+                height: 5.0,
+              ),
+              tabCategory(),
+              SizedBox(
+                height: 10.0,
+              ),
+              KeySearch(
+                show: hideSearch,
+                onKeySearchChange: (String val) {
+                  setState(() {
+                    keySearch = val;
+                  });
+                },
+              ),
+              Expanded(
+                child: SmartRefresher(
+                  enablePullDown: false,
+                  enablePullUp: true,
+                  footer: ClassicFooter(
+                    loadingText: ' ',
+                    canLoadingText: ' ',
+                    idleText: ' ',
+                    idleIcon: Icon(Icons.arrow_upward, color: Colors.transparent),
+                  ),
+                  controller: _refreshController,
+                  onLoading: _onLoading,
+                  child: ListView(
+                    children: [
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      keySearch == ''
+                          ? isMain
+                              ? ListView(
+                                  shrinkWrap: true,
+                                  physics: ClampingScrollPhysics(), // 2nd
+                                  children: [
+                                    ListContentHorizontalPrivilegeSuggested(
+                                      title: 'แนะนำ',
+                                      url: knowledgeApi,
+                                      model: _futurePromotion,
+                                      urlComment: '',
+                                      navigationList: () {
+                                        setState(() {
+                                          keySearch = '';
+                                          isMain = false;
+                                          categorySelected = '';
+                                        });
+                                      },
+                                      navigationForm: (
+                                        String code,
+                                        dynamic model,
+                                      ) {
+                                        // Navigator.push(
+                                        //   context,
+                                        //   MaterialPageRoute(
+                                        //     builder: (context) => PrivilegeForm(
+                                        //       code: code,
+                                        //       model: model,
+                                        //     ),
+                                        //   ),
+                                        // );
+                                        launchURL('${model['linkUrl']}');
+                                      },
+                                    ),
+                                    for (int i = 0; i < listData.length; i++)
+                                      ListContentHorizontalPrivilege(
+                                        code: category[i]['code'],
+                                        title: category[i]['title'],
+                                        model: listData[i],
+                                        navigationList: () {
+                                          setState(() {
+                                            keySearch = '';
+                                            isMain = false;
+                                            categorySelected =
+                                                category[i]['code'];
+                                          });
+                                        },
+                                        navigationForm: (
+                                          String code,
+                                          dynamic model,
+                                        ) {
+                                          // Navigator.push(
+                                          //   context,
+                                          //   MaterialPageRoute(
+                                          //     builder: (context) => PrivilegeForm(
+                                          //       code: code,
+                                          //       model: model,
+                                          //     ),
+                                          //   ),
+                                          // );
+                                          launchURL('${model['linkUrl']}');
+                                        },
+                                      ),
+                                  ],
+                                )
+                              : reloadList()
+                          : reloadList(),
+                      SizedBox(
+                        height: 30.0,
+                      ),
+                    ],
+                  ),
                 ),
-                tabCategory(),
-                SizedBox(
-                  height: 10.0,
-                ),
-                KeySearch(
-                  show: hideSearch,
-                  onKeySearchChange: (String val) {
-                    setState(() {
-                      keySearch = val;
-                    });
-                  },
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                keySearch == ''
-                    ? isMain
-                        ? ListView(
-                            shrinkWrap: true,
-                            physics: ClampingScrollPhysics(), // 2nd
-                            children: [
-                              ListContentHorizontalPrivilegeSuggested(
-                                title: 'แนะนำ',
-                                url: knowledgeApi,
-                                model: _futurePromotion,
-                                urlComment: '',
-                                navigationList: () {
-                                  setState(() {
-                                    keySearch = '';
-                                    isMain = false;
-                                    categorySelected = '';
-                                  });
-                                },
-                                navigationForm: (
-                                  String code,
-                                  dynamic model,
-                                ) {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(
-                                  //     builder: (context) => PrivilegeForm(
-                                  //       code: code,
-                                  //       model: model,
-                                  //     ),
-                                  //   ),
-                                  // );
-                                  launchURL('${model['linkUrl']}');
-                                },
-                              ),
-                              for (int i = 0; i < listData.length; i++)
-                                ListContentHorizontalPrivilege(
-                                  code: category[i]['code'],
-                                  title: category[i]['title'],
-                                  model: listData[i],
-                                  navigationList: () {
-                                    setState(() {
-                                      keySearch = '';
-                                      isMain = false;
-                                      categorySelected = category[i]['code'];
-                                    });
-                                  },
-                                  navigationForm: (
-                                    String code,
-                                    dynamic model,
-                                  ) {
-                                    // Navigator.push(
-                                    //   context,
-                                    //   MaterialPageRoute(
-                                    //     builder: (context) => PrivilegeForm(
-                                    //       code: code,
-                                    //       model: model,
-                                    //     ),
-                                    //   ),
-                                    // );
-                                    launchURL('${model['linkUrl']}');
-                                  },
-                                ),
-                            ],
-                          )
-                        : reloadList()
-                    : reloadList(),
-                SizedBox(
-                  height: 30.0,
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -311,24 +318,29 @@ class _PrivilegeMain extends State<PrivilegeMain> {
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         if (snapshot.hasData) {
           return Container(
-            height: 45.0,
-            padding: EdgeInsets.only(left: 5.0, right: 5.0),
+            height: 40.0,
+            padding: EdgeInsets.symmetric(horizontal: 3, vertical: 3),
             margin: EdgeInsets.symmetric(horizontal: 10.0),
             decoration: new BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 0,
-                  blurRadius: 7,
-                  offset: Offset(0, 3), // changes position of shadow
-                ),
-              ],
+              // boxShadow: [
+              //   BoxShadow(
+              //     color: Colors.grey.withOpacity(0.5),
+              //     spreadRadius: 0,
+              //     blurRadius: 7,
+              //     offset: Offset(0, 3), // changes position of shadow
+              //   ),
+              // ],
               borderRadius: new BorderRadius.circular(6.0),
               color: Colors.white,
             ),
-            child: ListView.builder(
+            child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: snapshot.data.length,
+              separatorBuilder: (context, index) {
+                return SizedBox(
+                  width: 10,
+                );
+              },
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
                   onTap: () {
@@ -350,25 +362,32 @@ class _PrivilegeMain extends State<PrivilegeMain> {
                       categorySelected = snapshot.data[index]['code'];
                     });
                   },
-                  child: Padding(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: categorySelected == snapshot.data[index]['code']
+                          ? Theme.of(context).primaryColor
+                          : Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                          width: 1, color: Theme.of(context).primaryColor),
+                    ),
                     padding: EdgeInsets.symmetric(
-                      horizontal: 5.0,
-                      vertical: 10.0,
+                      horizontal: 10.0,
+                      vertical: 5.0,
                     ),
                     child: Text(
                       snapshot.data[index]['title'],
                       style: TextStyle(
                         color: categorySelected == snapshot.data[index]['code']
-                            ? Colors.black
-                            : Colors.grey,
-                        decoration:
-                            categorySelected == snapshot.data[index]['code']
-                                ? TextDecoration.underline
-                                : null,
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.normal,
-                        letterSpacing: 1.2,
-                        fontFamily: 'Sarabun',
+                            ? Colors.white
+                            : Theme.of(context).primaryColor,
+                        // decoration: index == selectedIndex
+                        //     ? TextDecoration.underline
+                        //     : null,
+                        fontSize: 15,
+                        fontWeight: categorySelected == snapshot.data[index]['code'] ? FontWeight.bold : FontWeight.normal,
+                        // letterSpacing: 1.2,
+                        fontFamily: 'Kanit',
                       ),
                     ),
                   ),

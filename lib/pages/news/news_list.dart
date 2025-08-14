@@ -85,69 +85,72 @@ class _NewsList extends State<NewsList> {
           overScroll.disallowIndicator();
           return false;
         },
-        child: SmartRefresher(
-          enablePullDown: false,
-          enablePullUp: true,
-          footer: const ClassicFooter(
-            loadingText: ' ',
-            canLoadingText: ' ',
-            idleText: ' ',
-            idleIcon: Icon(Icons.arrow_upward, color: Colors.transparent),
-          ),
-          controller: _refreshController,
-          onLoading: _onLoading,
-          child: ListView(
-            physics: ScrollPhysics(),
-            shrinkWrap: true,
-            children: [
-              SizedBox(height: 30),
-              CategorySelector(
-                model: service.postCategory(
-                  '${service.newsCategoryApi}read',
-                  {'skip': 0, 'limit': 100, 'code': '20241028102515-482-400'},
+        child: Column(
+          children: [
+            SizedBox(height: 5),
+            CategorySelector(
+              model: service.postCategory(
+                '${service.newsCategoryApi}read',
+                {'skip': 0, 'limit': 100, 'code': '20241028102515-482-400'},
+              ),
+              onChange: (String val) {
+                setState(
+                  () {
+                    news = new NewsListVertical(
+                      site: 'DDPM',
+                      model: postDio('${newsApi}read',
+                          {'skip': 0, 'limit': _limit, "keySearch": keySearch}),
+                      url: '${service.newsApi}read',
+                      urlGallery: '${service.newsGalleryApi}',
+                    );
+                  },
+                );
+              },
+            ),
+            const SizedBox(height: 5),
+            KeySearch(
+              show: hideSearch,
+              onKeySearchChange: (String val) {
+                setState(
+                  () {
+                    keySearch = val;
+                    news = new NewsListVertical(
+                      site: 'DDPM',
+                      model: postDio('${newsApi}read', {
+                        'skip': 0,
+                        'limit': _limit,
+                        "keySearch": keySearch,
+                      }),
+                      url: '${service.newsApi}read',
+                      urlGallery: '${service.newsGalleryApi}',
+                    );
+                  },
+                );
+              },
+            ),
+            SizedBox(height: 10),
+            Expanded(
+              child: SmartRefresher(
+                enablePullDown: false,
+                enablePullUp: true,
+                footer: const ClassicFooter(
+                  loadingText: ' ',
+                  canLoadingText: ' ',
+                  idleText: ' ',
+                  idleIcon: Icon(Icons.arrow_upward, color: Colors.transparent),
                 ),
-                onChange: (String val) {
-                  setState(
-                    () {
-                      news = new NewsListVertical(
-                        site: 'DDPM',
-                        model: postDio('${newsApi}read', {
-                          'skip': 0,
-                          'limit': _limit,
-                          "keySearch": keySearch
-                        }),
-                        url: '${service.newsApi}read',
-                        urlGallery: '${service.newsGalleryApi}',
-                      );
-                    },
-                  );
-                },
+                controller: _refreshController,
+                onLoading: _onLoading,
+                child: ListView(
+                  physics: ScrollPhysics(),
+                  shrinkWrap: true,
+                  children: [
+                    news!,
+                  ],
+                ),
               ),
-              const SizedBox(height: 5),
-              KeySearch(
-                show: hideSearch,
-                onKeySearchChange: (String val) {
-                  setState(
-                    () {
-                      keySearch = val;
-                      news = new NewsListVertical(
-                        site: 'DDPM',
-                        model: postDio('${newsApi}read', {
-                          'skip': 0,
-                          'limit': _limit,
-                          "keySearch": keySearch,
-                        }),
-                        url: '${service.newsApi}read',
-                        urlGallery: '${service.newsGalleryApi}',
-                      );
-                    },
-                  );
-                },
-              ),
-              SizedBox(height: 10),
-              news!,
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

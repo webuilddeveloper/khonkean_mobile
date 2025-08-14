@@ -112,24 +112,27 @@ class _EventCalendarList extends State<EventCalendarList> {
 
         if (snapshot.hasData) {
           return Container(
-            height: 45.0,
-            padding: EdgeInsets.only(left: 5.0, right: 5.0),
+            height: 40.0,
+            padding: EdgeInsets.symmetric(horizontal: 3, vertical: 3),
             margin: EdgeInsets.symmetric(horizontal: 10.0),
             decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 0,
-                  blurRadius: 7,
-                  offset: Offset(0, 3), // changes position of shadow
-                ),
-              ],
+              // boxShadow: [
+              //   BoxShadow(
+              //     color: Colors.grey.withOpacity(0.5),
+              //     spreadRadius: 0,
+              //     blurRadius: 7,
+              //     offset: Offset(0, 3), // changes position of shadow
+              //   ),
+              // ],
               borderRadius: BorderRadius.circular(6.0),
-              color: Colors.white,
+              // color: Colors.white,
             ),
-            child: ListView.builder(
+            child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: snapshot.data.length,
+              separatorBuilder: (context, index) {
+                return SizedBox(width: 10,);
+              },
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
                   onTap: () {
@@ -151,24 +154,32 @@ class _EventCalendarList extends State<EventCalendarList> {
                       // selectedIndex = index;
                     });
                   },
-                  child: Padding(
+                  child: Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 5.0,
-                      vertical: 10.0,
+                      horizontal: 10.0,
+                      vertical: 5.0,
+                    ),
+                    decoration: BoxDecoration(
+                      color: categorySelected == snapshot.data[index]['code']
+                          ? Theme.of(context).primaryColor
+                          : Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                              width: 1, color: Theme.of(context).primaryColor),
                     ),
                     child: Text(
                       snapshot.data[index]['title'],
                       style: TextStyle(
                         color: categorySelected == snapshot.data[index]['code']
-                            ? Colors.black
-                            : Colors.grey,
-                        decoration:
-                            categorySelected == snapshot.data[index]['code']
-                                ? TextDecoration.underline
-                                : null,
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.normal,
-                        letterSpacing: 1.2,
+                            ? Colors.white
+                            : Theme.of(context).primaryColor,
+                        // decoration:
+                        //     categorySelected == snapshot.data[index]['code']
+                        //         ? TextDecoration.underline
+                        //         : null,
+                        fontSize: 15.0,
+                        fontWeight: categorySelected == snapshot.data[index]['code'] ? FontWeight.bold : FontWeight.normal,
+                        // letterSpacing: 1.2,
                         fontFamily: 'Kanit',
                       ),
                     ),

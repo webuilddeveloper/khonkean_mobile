@@ -101,6 +101,7 @@ class _PrivilegeDetailPageState extends State<PrivilegeForm> {
       removeTop: true,
       child: ListView(
         shrinkWrap: true,
+        physics: ClampingScrollPhysics(),
         children: [
           Stack(
             children: [
@@ -128,7 +129,7 @@ class _PrivilegeDetailPageState extends State<PrivilegeForm> {
                         '${model['title']}',
                         style: TextStyle(
                           fontSize: 18.0,
-                          fontFamily: 'Sarabun',
+                          fontFamily: 'Kanit',
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -158,7 +159,7 @@ class _PrivilegeDetailPageState extends State<PrivilegeForm> {
                                       model['createBy'],
                                       style: TextStyle(
                                         fontSize: 15,
-                                        fontFamily: 'Sarabun',
+                                        fontFamily: 'Kanit',
                                         fontWeight: FontWeight.w300,
                                       ),
                                     ),
@@ -170,7 +171,7 @@ class _PrivilegeDetailPageState extends State<PrivilegeForm> {
                                               ' | ',
                                           style: TextStyle(
                                             fontSize: 10,
-                                            fontFamily: 'Sarabun',
+                                            fontFamily: 'Kanit',
                                             fontWeight: FontWeight.w300,
                                           ),
                                         ),
@@ -180,7 +181,7 @@ class _PrivilegeDetailPageState extends State<PrivilegeForm> {
                                               ' ครั้ง',
                                           style: TextStyle(
                                             fontSize: 10,
-                                            fontFamily: 'Sarabun',
+                                            fontFamily: 'Kanit',
                                             fontWeight: FontWeight.w300,
                                           ),
                                         ),
@@ -218,40 +219,72 @@ class _PrivilegeDetailPageState extends State<PrivilegeForm> {
                     SizedBox(
                       height: 20.0,
                     ),
-                    Container(
-                      alignment: Alignment.center,
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(horizontal: 80.0),
-                      child: Material(
-                        elevation: 5.0,
-                        borderRadius: BorderRadius.circular(10.0),
-                        child: Container(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 10),
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5.0),
-                              border: Border.all(
-                                color: Theme.of(context).primaryColor,
-                              )),
-                          child: MaterialButton(
-                            minWidth: MediaQuery.of(context).size.width,
-                            onPressed: () {
-                              launchURL(model['linkUrl']);
+                            borderRadius: BorderRadius.circular(12.0),
+                            color: Theme.of(context).primaryColor,
+                            gradient: LinearGradient(
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                                colors: [
+                                  Theme.of(context).primaryColor,
+                                  Theme.of(context).primaryColorLight,
+                                ],
+                                stops: [
+                                  0.0,
+                                  0.8
+                                ]),
+                          ),
+                          child: GestureDetector(
+                            // minWidth: MediaQuery.of(context).size.width,
+                            onTap: () {
+                              launchURL('${model['linkUrl']}');
                             },
                             child: Text(
                               'ดูรายละเอียดเพิ่มเติม',
                               style: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontFamily: 'Sarabun',
+                                // color: Theme.of(context).colorScheme.secondary,
+                                color: Colors.white,
+                                fontFamily: 'Kanit',
                               ),
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
                             ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
                     SizedBox(
                       height: 20.0,
                     ),
                   ],
+                ),
+              ),
+              Positioned(
+                right: 0,
+                top: 0,
+                child: Container(
+                  height: 100,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: new BoxDecoration(
+                    color: Colors.grey,
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.black54,
+                        Colors.transparent,
+                      ],
+                      stops: [0.0, 0.9],
+                    ),
+                  ),
                 ),
               ),
               Positioned(
@@ -264,6 +297,7 @@ class _PrivilegeDetailPageState extends State<PrivilegeForm> {
             ],
             // overflow: Overflow.clip,
           ),
+        
         ],
       ),
     );

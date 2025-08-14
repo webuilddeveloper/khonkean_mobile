@@ -149,7 +149,7 @@ class _ContentPoi extends State<ContentPoi> {
             '${model['title']}',
             style: TextStyle(
               fontSize: 18.0,
-              fontFamily: 'Sarabun',
+              fontFamily: 'Kanit',
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -180,7 +180,7 @@ class _ContentPoi extends State<ContentPoi> {
                           model['createBy'],
                           style: TextStyle(
                             fontSize: 15,
-                            fontFamily: 'Sarabun',
+                            fontFamily: 'Kanit',
                             fontWeight: FontWeight.w300,
                           ),
                         ),
@@ -190,7 +190,7 @@ class _ContentPoi extends State<ContentPoi> {
                               dateStringToDate(model['createDate']) + ' | ',
                               style: TextStyle(
                                 fontSize: 10,
-                                fontFamily: 'Sarabun',
+                                fontFamily: 'Kanit',
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
@@ -198,7 +198,7 @@ class _ContentPoi extends State<ContentPoi> {
                               'เข้าชม ' + '${model['view']}' + ' ครั้ง',
                               style: TextStyle(
                                 fontSize: 10,
-                                fontFamily: 'Sarabun',
+                                fontFamily: 'Kanit',
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
@@ -213,14 +213,15 @@ class _ContentPoi extends State<ContentPoi> {
             Container(
               // width: 74.0,
               height: 31.0,
+              padding: EdgeInsets.only(right: 10),
               // decoration: BoxDecoration(
               //     image: DecorationImage(
               //       image: AssetImage('assets/images/share.png'),
               //     )),
               alignment: Alignment.centerRight,
-              child: TextButton(
+              child: GestureDetector(
                 // padding: EdgeInsets.all(0.0),
-                onPressed: () {
+                onTap: () {
                   // final RenderBox box = context.findRenderObject();
                   final RenderBox? box = context.findRenderObject() as RenderBox; 
                   Share.share(
@@ -274,26 +275,27 @@ class _ContentPoi extends State<ContentPoi> {
             left: 10,
           ),
           child: Text(
-            'ที่ตั้ง',
+            'ที่ตั้ง : ${model['address'] != '' ? model['address'] : '-'}',
             style: TextStyle(
               fontSize: 15,
-              fontFamily: 'Sarabun',
+              fontFamily: 'Kanit',
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(
-            right: 10,
-            left: 10,
-          ),
-          child: Text(
-            model['address'] != '' ? model['address'] : '-',
-            style: TextStyle(
-              fontSize: 10,
-              fontFamily: 'Sarabun',
-            ),
-          ),
-        ),
+        const SizedBox(height: 10,),
+        // Padding(
+        //   padding: const EdgeInsets.only(
+        //     right: 10,
+        //     left: 10,
+        //   ),
+        //   child: Text(
+        //     model['address'] != '' ? model['address'] : '-',
+        //     style: TextStyle(
+        //       fontSize: 10,
+        //       fontFamily: 'Sarabun',
+        //     ),
+        //   ),
+        // ),
         Container(
           height: 250,
           width: double.infinity,

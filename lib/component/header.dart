@@ -23,10 +23,11 @@ PreferredSizeWidget header(
         title,
         textAlign: TextAlign.center,
         style: const TextStyle(
-          fontSize: 20,
-          color: Colors.white,
-          fontWeight: FontWeight.normal,
           fontFamily: 'Kanit',
+          fontWeight: FontWeight.w700,
+          color: Colors.white,
+          fontSize: 22,
+          letterSpacing: 0.5,
         ),
       ),
 
