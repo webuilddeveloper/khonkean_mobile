@@ -423,7 +423,7 @@ class HomePageState extends State<HomePage> {
                   color: Theme.of(context).primaryColor,
                   fontSize: 20.0,
                   fontFamily: 'Kanit',
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               GestureDetector(
@@ -446,13 +446,13 @@ class HomePageState extends State<HomePage> {
                         fontSize: 12.0,
                         fontFamily: 'Kanit',
                         fontWeight: FontWeight.w400,
-                        color: Color(0XFF27544F),
+                        color: Colors.black
                       ),
                     ),
                     Icon(
                       Icons.chevron_right,
                       size: 17,
-                      color: Color(0XFF27544F),
+                      color: Colors.black
                     ),
                   ],
                 ),
@@ -686,7 +686,7 @@ class HomePageState extends State<HomePage> {
               color: Theme.of(context).primaryColor,
               fontSize: 20.0,
               fontFamily: 'Kanit',
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
@@ -795,7 +795,7 @@ class HomePageState extends State<HomePage> {
               style: TextStyle(
                 fontSize: 18,
                 fontFamily: 'Kanit',
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.bold,
                 color: Theme.of(context).primaryColor,
               ),
             ),
@@ -1105,7 +1105,7 @@ class HomePageState extends State<HomePage> {
                   color: Theme.of(context).primaryColor,
                   fontSize: 20.0,
                   fontFamily: 'Kanit',
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               GestureDetector(
@@ -1122,6 +1122,7 @@ class HomePageState extends State<HomePage> {
                 },
                 child: const Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       'ดูทั้งหมด',
@@ -1129,13 +1130,13 @@ class HomePageState extends State<HomePage> {
                         fontSize: 12.0,
                         fontFamily: 'Kanit',
                         fontWeight: FontWeight.w400,
-                        color: Color(0XFF27544F),
+                        color: Colors.black
                       ),
                     ),
                     Icon(
                       Icons.chevron_right,
                       size: 17,
-                      color: Color(0XFF27544F),
+                      color: Colors.black
                     ),
                   ],
                 ),

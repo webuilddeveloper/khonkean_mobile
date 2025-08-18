@@ -338,19 +338,19 @@ class _MenuState extends State<Menu> {
                   ? Image.memory(
                       checkAvatar(context, _imageProfile),
                       fit: BoxFit.cover,
-                      height: 30,
-                      width: 30,
+                      height: _currentPage == index ? 40 : 30,
+                      width: _currentPage == index ? 40 : 30,
                       errorBuilder: (_, __, ___) => Image.asset(
                         "assets/images/profile_menu.png",
                         fit: BoxFit.fill,
-                        height: 30,
-                        width: 30,
+                        height: _currentPage == index ? 40 : 30,
+                        width: _currentPage == index ? 40 : 30,
                       ),
                     )
                   : Image.asset(
                       'assets/images/profile_menu.png',
-                      height: 30,
-                      width: 30,
+                      height: _currentPage == index ? 40 : 30,
+                      width: _currentPage == index ? 40 : 30,
                       color: color,
                     )
               : isNoti
@@ -359,8 +359,8 @@ class _MenuState extends State<Menu> {
                       clipBehavior: Clip.none,
                       children: [
                         _currentPage == index
-                            ? Icon(iconDataActive, size: 30, color: color)
-                            : Icon(iconData, size: 30, color: color),
+                            ? Icon(iconDataActive, size: _currentPage == index ? 40 : 30, color: color)
+                            : Icon(iconData, size: _currentPage == index ? 40 : 30, color: color),
                         if (_ListNotiModel.isNotEmpty)
                           const Positioned(
                             top: -2,
@@ -386,11 +386,11 @@ class _MenuState extends State<Menu> {
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child:
-                              Icon(Icons.badge, size: 30, color: Colors.white),
+                              Icon(Icons.badge, size: _currentPage == index ? 40 : 30, color: Colors.white),
                         )
                       : Icon(
                           _currentPage == index ? iconDataActive : iconData,
-                          size: 30,
+                          size: _currentPage == index ? 40 : 30,
                           color: color,
                         ),
           const SizedBox(height: 4),
