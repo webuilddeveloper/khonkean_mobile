@@ -38,7 +38,7 @@ const versionNumber = 1;
 
 const serverPrefix = 'https://khubdeedlt.we-builds.com/';
 const server = '$serverPrefix/khubdeedlt-api/';
-const serverNpm = 'http://gateway.we-builds.com/nakhonphanom-api';
+const serverNpm = 'https://gateway.we-builds.com/khonkean-api';
 const serverUpload = '$serverPrefix/khubdeedlt-document/upload';
 const serverMW = 'http://122.155.223.63/td-khub-dee-middleware-api/';
 

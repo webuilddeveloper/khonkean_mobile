@@ -122,7 +122,7 @@ class _CarouselRotation extends State<CarouselRotation> {
           child: Transform.translate(
             offset: const Offset(0, -90), // ขึ้นจากล่าง 60px
             child: Text(
-              'นครพนมเมืองวัฒนธรรมก้าวหน้า',
+              'ขอนแก่นดินแดนวัฒนธรรม',
               textAlign: TextAlign.center,
               style: TextStyle(
                   color: Colors.white,
@@ -137,7 +137,7 @@ class _CarouselRotation extends State<CarouselRotation> {
           child: Transform.translate(
             offset: const Offset(0, -70), // ขึ้นจากล่าง 60px
             child: Text(
-              'พัฒนาอย่างสมดุลบนพื้นฐานความพอเพียง',
+              'ศูนย์กลางการศึกษาแห่งภาคอีสาน',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
