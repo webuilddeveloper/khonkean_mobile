@@ -59,7 +59,7 @@ class _EventCalendarListVertical extends State<EventCalendarListVertical> {
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: 1 / 2,
+                  childAspectRatio: 1 / 1.07,
                 ),
                 physics: ClampingScrollPhysics(),
                 shrinkWrap: true,
