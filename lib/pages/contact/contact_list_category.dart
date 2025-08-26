@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:khonkean_mobile/component/header.dart';
 
 import '../../component/carousel_banner.dart';
 import '../../component/carousel_form.dart';
 import '../../component/link_url_in.dart';
 import '../../shared/api_provider.dart';
-import '../../widget/header.dart';
 import 'contact_list_category_vertical.dart';
 
 class ContactListCategory extends StatefulWidget {
@@ -60,7 +60,7 @@ class _ContactListCategory extends State<ContactListCategory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: header(context, goBack, title: widget.title),
+      appBar: header(context, goBack, title: widget.title!),
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (OverscrollIndicatorNotification overScroll) {
           overScroll.disallowIndicator();

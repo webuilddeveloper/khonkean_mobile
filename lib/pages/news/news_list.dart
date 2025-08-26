@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:marine_mobile/component/header.dart' show header;
-import 'package:marine_mobile/shared/api_provider.dart';
+import 'package:khonkean_mobile/component/header.dart';
+import 'package:khonkean_mobile/shared/api_provider.dart';
 
 import '../../component/key_search.dart';
 import '../../component/tab_category.dart';
@@ -35,7 +35,7 @@ class _NewsList extends State<NewsList> {
 
     news = new NewsListVertical(
       site: "DDPM",
-      model: postDio('${newsApi}read', {
+      model: postDio('${service.newsApi}read', {
         'skip': 0,
         'limit': _limit,
       }),

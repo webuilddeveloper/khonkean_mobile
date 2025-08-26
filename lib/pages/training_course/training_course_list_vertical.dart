@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:marine_mobile/pages/training_course/training_crouse_detail.dart';
+import 'package:khonkean_mobile/pages/training_course/training_crouse_detail.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class TrainingCourseListVertical extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:marine_mobile/pages/question/question_list_detail.dart';
+import 'package:khonkean_mobile/pages/question/question_list_detail.dart';
 
 class QuestionListVertical extends StatefulWidget {
   QuestionListVertical({

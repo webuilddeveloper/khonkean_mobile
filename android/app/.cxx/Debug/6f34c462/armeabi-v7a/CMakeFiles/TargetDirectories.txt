@@ -1,0 +1,2 @@
+/Users/panuwitchaiton/webuild/province-app/Khonkaen/khonkean_mobile/android/app/.cxx/Debug/6f34c462/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/panuwitchaiton/webuild/province-app/Khonkaen/khonkean_mobile/android/app/.cxx/Debug/6f34c462/armeabi-v7a/CMakeFiles/rebuild_cache.dir

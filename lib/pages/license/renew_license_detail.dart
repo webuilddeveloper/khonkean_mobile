@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:marine_mobile/pages/license/renew_license_payment.dart';
+import 'package:khonkean_mobile/pages/license/renew_license_payment.dart';
 
 class RenewLicenseDetail extends StatefulWidget {
   RenewLicenseDetail({super.key, this.model});

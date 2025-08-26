@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:marine_mobile/component/header.dart';
-import 'package:marine_mobile/shared/api_provider.dart' as service;
+import 'package:khonkean_mobile/component/header.dart';
+import 'package:khonkean_mobile/shared/api_provider.dart' as service;
 
 import 'knowledge_list_vertical.dart' as grid;
 

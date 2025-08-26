@@ -7,9 +7,9 @@ import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart'
     as datatTimePicker;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:intl/intl.dart';
+import 'package:khonkean_mobile/component/header.dart';
 
 import '../../shared/api_provider.dart';
-import '../../widget/header.dart';
 import '../../widget/text_form_field.dart';
 import '../blank_page/dialog_fail.dart';
 
@@ -164,7 +164,7 @@ class _IdentityVerificationPageV2State
         }
       },
       child: Scaffold(
-        appBar: header(context, goBack, title: widget.title),
+        appBar: header(context, goBack, title: widget.title!),
         backgroundColor: const Color(0xFFFFFFFF),
         body: Container(
           child: ListView(

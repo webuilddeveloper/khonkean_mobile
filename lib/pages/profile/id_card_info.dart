@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:intl/intl.dart';
+import 'package:khonkean_mobile/component/header.dart';
 
 import '../../shared/api_provider.dart';
 import '../../widget/dialog.dart';
-import '../../widget/header.dart';
 import '../blank_page/toast_fail.dart';
 
 class IDCardInfo extends StatefulWidget {

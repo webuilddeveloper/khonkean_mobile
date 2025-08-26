@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:marine_mobile/pages/blank_page/blank_loading.dart';
-import 'package:marine_mobile/pages/training_course/training_course_list_category.dart';
 
 class TrainingCrouseDetail extends StatefulWidget {
   TrainingCrouseDetail({super.key, this.model, this.changePage});

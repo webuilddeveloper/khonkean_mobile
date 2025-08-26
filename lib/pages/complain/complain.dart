@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:marine_mobile/pages/complain/complain_detail.dart';
-import 'package:marine_mobile/pages/complain/complain_follow.dart';
+import 'package:khonkean_mobile/pages/complain/complain_detail.dart';
+import 'package:khonkean_mobile/pages/complain/complain_follow.dart';
 
 class ComplainListCategory extends StatefulWidget {
   final Function? changePage;

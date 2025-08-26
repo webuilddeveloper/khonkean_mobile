@@ -381,38 +381,41 @@ class _PoiList extends State<PoiList> {
         ),
         controller: _panelRefreshController, // ใช้ controller แยก
         onLoading: _onPanelLoading, // ใช้ function แยก
-        child: ListView(
-          controller: sc,
-          children: <Widget>[
-            Center(
-              child: Container(
-                margin: EdgeInsets.only(top: 10),
-                width: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Colors.grey,
-                ),
-                height: 4,
-              ),
-            ),
-            Container(
-              height: 35,
-              width: double.infinity,
-              alignment: Alignment.center,
-              child: Text(
-                'จุดบริการ',
-                style: TextStyle(
-                  fontFamily: 'Kanit',
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: ListView(
+            controller: sc,
+            children: <Widget>[
+              Center(
+                child: Container(
+                  margin: EdgeInsets.only(top: 10),
+                  width: 40,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.grey,
+                  ),
+                  height: 4,
                 ),
               ),
-            ),
-            SizedBox(height: 5),
-            Container(
-              child: gridView,
-            ),
-          ],
+              Container(
+                height: 35,
+                width: double.infinity,
+                alignment: Alignment.center,
+                child: Text(
+                  'จุดบริการ',
+                  style: TextStyle(
+                    fontFamily: 'Kanit',
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                child: gridView,
+              ),
+            ],
+          ),
         ),
       ),
     );

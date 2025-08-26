@@ -6,9 +6,9 @@ import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart'
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:khonkean_mobile/component/header.dart';
 
 import '../../shared/api_provider.dart';
-import '../../widget/header.dart';
 import '../../widget/text_form_field.dart';
 import '../blank_page/dialog_fail.dart';
 import 'user_information.dart';

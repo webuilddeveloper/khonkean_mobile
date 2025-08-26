@@ -2,9 +2,8 @@ import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:marine_mobile/login.dart';
-import 'package:marine_mobile/menu.dart';
-import 'package:marine_mobile/shared/api_provider.dart';
+import 'package:khonkean_mobile/menu.dart';
+import 'package:khonkean_mobile/shared/api_provider.dart';
 
 import 'pages/blank_page/dialog_fail.dart';
 // import 'package:flutter_secure_storage/flutter_secure_storage.dart';

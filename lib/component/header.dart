@@ -11,14 +11,17 @@ PreferredSizeWidget header(
   String menu = '',
 }) {
   return PreferredSize(
-    preferredSize: const Size.fromHeight(50),
+    preferredSize: const Size.fromHeight(60),
     child: AppBar(
+      bottom: PreferredSize(
+        preferredSize: Size.fromHeight(10), // ความสูง space
+        child: SizedBox(), // ว่างเปล่า
+      ),
       backgroundColor: Theme.of(context).primaryColor,
       elevation: 0.0,
       centerTitle: true,
       automaticallyImplyLeading: false,
       titleSpacing: 5,
-
       title: Text(
         title,
         textAlign: TextAlign.center,
@@ -33,7 +36,7 @@ PreferredSizeWidget header(
 
       leading: isButtonLeft
           ? Padding(
-              padding: const EdgeInsets.only(left: 10.0, bottom: 6.0),
+              padding: const EdgeInsets.only(left: 10.0, bottom: 10.0),
               child: InkWell(
                 onTap: () => functionGoBack(),
                 borderRadius: BorderRadius.circular(10.0),
@@ -42,7 +45,7 @@ PreferredSizeWidget header(
                     color: Colors.white.withOpacity(0.2),
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  padding: const EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(1.0),
                   child: const Icon(
                     Icons.arrow_back_ios_new_rounded,
                     color: Colors.white,

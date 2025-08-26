@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:marine_mobile/pages/license/check_license_detail.dart';
-import 'package:marine_mobile/widget/text_form_field.dart';
+import 'package:khonkean_mobile/pages/license/check_license_detail.dart';
+import 'package:khonkean_mobile/widget/text_form_field.dart';
 
 class CheckLicense extends StatefulWidget {
   const CheckLicense({super.key, this.title, this.code});

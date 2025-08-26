@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
-import 'package:marine_mobile/component/material/check_avatar.dart';
-import 'package:marine_mobile/widget/text_form_field.dart';
+import 'package:khonkean_mobile/component/material/check_avatar.dart';
+import 'package:khonkean_mobile/widget/text_form_field.dart';
 
 import '../../shared/api_provider.dart';
 

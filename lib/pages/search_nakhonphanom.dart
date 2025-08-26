@@ -158,7 +158,8 @@ class _SearchNakhonPhanomPageState extends State<SearchNakhonPhanomPage>
             letterSpacing: 0.5,
           ),
         ),
-        backgroundColor: Color(0xFFe7b014),
+        centerTitle: true,
+        // backgroundColor: Color(0xFFe7b014),
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.white),
         flexibleSpace: Container(
@@ -174,6 +175,7 @@ class _SearchNakhonPhanomPageState extends State<SearchNakhonPhanomPage>
           ),
         ),
       ),
+      
       body: Column(
         children: [
           Padding(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:marine_mobile/component/header.dart';
+import 'package:khonkean_mobile/component/header.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class TravelPlacesList extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:marine_mobile/pages/license/check_license.dart';
+import 'package:khonkean_mobile/pages/license/check_license.dart';
 
 class CheckLicenseListCategoryVertical extends StatefulWidget {
   const CheckLicenseListCategoryVertical({

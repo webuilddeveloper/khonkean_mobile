@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:marine_mobile/pages/complain/complain_add_detail.dart';
-import 'package:marine_mobile/shared/api_provider.dart';
+import 'package:khonkean_mobile/pages/complain/complain_add_detail.dart';
+import 'package:khonkean_mobile/shared/api_provider.dart';
 
 class ComplainDetail extends StatefulWidget {
   const ComplainDetail({super.key});

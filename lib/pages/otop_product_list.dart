@@ -56,14 +56,18 @@ class _OtopProductListPageState extends State<OtopProductListPage>
     return Scaffold(
       backgroundColor: Color(0xFFF8FAFC),
       appBar: AppBar(
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(5), // ความสูง space
+          child: SizedBox(), // ว่างเปล่า
+        ),
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(left: 10.0, bottom: 10.0),
           child: GestureDetector(
             onTap: () {
               Navigator.pop(context);
             },
             child: Container(
-              padding: EdgeInsets.all(4),
+              padding: EdgeInsets.all(0),
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(12),
@@ -86,6 +90,7 @@ class _OtopProductListPageState extends State<OtopProductListPage>
             letterSpacing: 0.5,
           ),
         ),
+        centerTitle: true,
         backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.white),
@@ -96,9 +101,9 @@ class _OtopProductListPageState extends State<OtopProductListPage>
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                        Theme.of(context).primaryColor,
-                        Theme.of(context).primaryColorLight,
-                      ],
+                Theme.of(context).primaryColor,
+                Theme.of(context).primaryColorLight,
+              ],
             ),
           ),
         ),
@@ -305,12 +310,15 @@ class _OtopProductListPageState extends State<OtopProductListPage>
                           end: Alignment.bottomRight,
                           colors: [
                             Theme.of(context).primaryColor.withOpacity(0.1),
-                            Theme.of(context).primaryColorLight.withOpacity(0.1),
+                            Theme.of(context)
+                                .primaryColorLight
+                                .withOpacity(0.1),
                           ],
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: Theme.of(context).primaryColor.withOpacity(0.2),
+                            color:
+                                Theme.of(context).primaryColor.withOpacity(0.2),
                             blurRadius: 15,
                             offset: Offset(0, 5),
                           ),
@@ -405,13 +413,19 @@ class _OtopProductListPageState extends State<OtopProductListPage>
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
-                                  Theme.of(context).primaryColor.withOpacity(0.2),
-                                  Theme.of(context).primaryColorLight.withOpacity(0.2),
+                                  Theme.of(context)
+                                      .primaryColor
+                                      .withOpacity(0.2),
+                                  Theme.of(context)
+                                      .primaryColorLight
+                                      .withOpacity(0.2),
                                 ],
                               ),
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(
-                                color: Theme.of(context).primaryColor.withOpacity(0.3),
+                                color: Theme.of(context)
+                                    .primaryColor
+                                    .withOpacity(0.3),
                                 width: 1,
                               ),
                             ),
@@ -478,7 +492,9 @@ class _OtopProductListPageState extends State<OtopProductListPage>
                                 borderRadius: BorderRadius.circular(10),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Theme.of(context).primaryColor.withOpacity(0.3),
+                                    color: Theme.of(context)
+                                        .primaryColor
+                                        .withOpacity(0.3),
                                     blurRadius: 10,
                                     offset: Offset(0, 4),
                                   ),

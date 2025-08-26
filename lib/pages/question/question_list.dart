@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:marine_mobile/pages/question/question_list_form.dart';
+import 'package:khonkean_mobile/pages/question/question_list_form.dart';
 
 import '../../shared/api_provider.dart';
 import 'question_list_vertical.dart';

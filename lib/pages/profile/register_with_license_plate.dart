@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:khonkean_mobile/component/header.dart';
 
 import '../../home_v2.dart';
 import '../../component/material/custom_alert_dialog.dart';
 import '../../component/material/field_item.dart';
 import '../../shared/api_provider.dart';
-import '../../widget/header.dart';
 import 'drivers_info.dart';
 
 class RegisterWithLicensePlate extends StatefulWidget {

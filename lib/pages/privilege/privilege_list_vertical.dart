@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:marine_mobile/shared/extension.dart';
+import 'package:khonkean_mobile/shared/extension.dart';
 
 import 'privilege_form.dart';
 

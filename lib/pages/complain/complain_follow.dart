@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:marine_mobile/pages/complain/complain_follow_detail.dart';
+import 'package:khonkean_mobile/pages/complain/complain_follow_detail.dart';
 
 class ComplainFollow extends StatefulWidget {
   const ComplainFollow({super.key});

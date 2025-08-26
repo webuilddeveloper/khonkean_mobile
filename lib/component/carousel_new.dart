@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:marine_mobile/pages/news/news_form.dart';
-import 'package:marine_mobile/shared/api_provider.dart';
+import 'package:khonkean_mobile/pages/news/news_form.dart';
+import 'package:khonkean_mobile/shared/api_provider.dart';
 
 class CarouselNew extends StatefulWidget {
   CarouselNew({super.key, this.model, this.nav});

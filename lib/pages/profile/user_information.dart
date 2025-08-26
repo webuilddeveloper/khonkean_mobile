@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:marine_mobile/pages/notification/notification_list.dart';
+import 'package:khonkean_mobile/pages/notification/notification_list.dart';
 
 import '../../shared/api_provider.dart';
 import '../blank_page/dialog_fail.dart';
